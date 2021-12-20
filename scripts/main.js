@@ -58,7 +58,8 @@ function loadWorld(worldName) {
 
 			$("#currentWorldImage").attr("src", data.imagePath);
 			$("#currentWorldMap").empty();
-			for (var w in data.warps) {
+			for (var i = 0; i < data.warps.length; i++) {
+				var w = data.warps[i];
 				$("#currentWorldMap").append("<area shape='rect' coord='" + w.coordString + "' alt='" + w.altName + "' class='warp'>");
 			}
 		})
