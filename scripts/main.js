@@ -46,7 +46,7 @@ function main() {
 function loadWorld(worldName) {
 
 	console.log("Loading World: " + worldName + ".");
-	var worldPath = "./worlds/json/" + worldName + ".json";
+	var worldPath = "../worlds/json/" + worldName + ".json";
 	fetch(worldPath)
 		.then(response => response.json())
 		.then(data => console.log(data))
