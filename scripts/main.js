@@ -67,17 +67,14 @@ function loadWorld(worldName) {
 			$("#currentWorldImage").attr("src", data.imagePath);
 			$("#currentWorldMap").empty();
 			for (var i = 0; i < data.warps.length; i++) {
-				var warp = data.warps[i];
-				var area = document.createElement("area");
 
-				area.shape = "rect";
-				area.class = "warp";
-				area.coords = warp.coordString;
-				area.alt = warp.altName;
+				var warp = data.warps[i];
+				var id = worldName + "." + warp.altName.toLowerCase().replace(" ", "");
+				var area = "<area class='warp' shape='rect' coords='" + warp.coordString + "' id='" + id + "' alt='" + warp.altName + "'>";
 
 				$("#currentWorldMap").append(area);
-				setupWarps();
 			}
+			setupWarps();
 		})
 		.catch(error => console.log(error));
 }
