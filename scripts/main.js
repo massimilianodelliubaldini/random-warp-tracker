@@ -60,7 +60,7 @@ function loadWorld(worldName) {
 			$("#currentWorldMap").empty();
 			for (var i = 0; i < data.warps.length; i++) {
 				var warp = data.warps[i];
-				var area = "<area shape='rect' coord='" + warp.coordString + "' alt='" + warp.altName + "' href='#' class='warp'>";
+				var area = "<area shape='rect' coords='" + warp.coordString + "' alt='" + warp.altName + "' class='warp'>";
 				$("#currentWorldMap").append(area);
 			}
 		})
