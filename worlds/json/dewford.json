@@ -1,0 +1,31 @@
+{
+	"imagePath": "../images/Dewford_Town_E.png",
+	"warps": 
+	[
+		{
+			"altName": "PokeCenter",
+			"coodString": "16,112,79,175",
+			"hrefLink": "./dewford.html"
+		},
+		{
+			"altName": "Gym",
+			"coodString": "80,208,175,287",
+			"hrefLink": "./dewford.html"
+		},
+		{
+			"altName": "House 1",
+			"coodString": "16,0,96,63",
+			"hrefLink": "./dewford.html"
+		},
+		{
+			"altName": "House 2",
+			"coodString": "112,80,175,143",
+			"hrefLink": "./dewford.html"
+		},
+		{
+			"altName": "House 3",
+			"coodString": "256,176,319,239",
+			"hrefLink": "./dewford.html"
+		}
+	]
+}

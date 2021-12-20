@@ -1,1 +1,48 @@
-<h1>Hello, World!</h1>
+﻿<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet"type="text/css" href="style.css">
+		<title>Randomized Warp Tracker</title>	
+	</head>
+	<body onload="main()">
+		<h1>Randomized Warp Tracker</h1>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
+		<script src="./scripts/main.js" type="text/javascript"></script>
+		<script type="text/javascript">
+
+			/*$(document).ready(function() {
+				$(function () {
+					$(".map").maphilight();
+				});
+			});*/
+
+		</script>
+		<div id="nav" style="display:inline-block">
+			<h2>Main Navigation</h2>
+			<span class="world" id="keyLocations">All Key Locations</span>
+			<span class="world" id="pokeCenters">All PokeCenters</span>
+			<span class="world" id="deptStore">The Department Store</span>
+			<h4>Towns and Cities</h4>
+			<span class="world" id="dewford">Dewford Town</span>
+			<span class="world" id="evergrande">Ever Grande City</span>
+			<span class="world" id="fallarbor">Fallarbor Town</span>
+			<span class="world" id="fortree">Fortree City</span>
+			<span class="world" id="lavaridge">Lavaridge Town</span>
+			<span class="world" id="lilycove">Lilycove City</span>
+			<span class="world" id="mauville">Mauville City</span>
+			<span class="world" id="mossdeep">Mossdeep City</span>
+			<span class="world" id="oldale">Oldale Town</span>
+			<span class="world" id="pacifidlog">Pacifidlog Town</span>
+			<span class="world" id="petalburg">Petalburg City</span>
+			<span class="world" id="rustboro">Rustboro City</span>
+			<span class="world" id="slateport">Slateport City</span>
+			<span class="world" id="sootopolis">Sootopolis City</span>
+			<h4>Other Branching Locations</h4>
+		</div>
+		<div id="currentWorld" style="display:inline-block">
+			<img src="" usemap="#currentMap" class="map"/>
+			<map name="currentMap">
+			</map>
+		</div>
+	</body>
+</html>

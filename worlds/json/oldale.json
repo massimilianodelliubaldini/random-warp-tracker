@@ -1,0 +1,26 @@
+{
+	"imagePath": "../images/Oldale_Town_E.png",
+	"warps": 
+	[
+		{
+			"altName": "PokeCenter",
+			"coodString": "80,208,143,271",
+			"hrefLink": "./oldale.html"
+		},
+		{
+			"altName": "PokeMart",
+			"coodString": "208,56,271,111",
+			"hrefLink": "./oldale.html"
+		},
+		{
+			"altName": "House 1",
+			"coodString": "64,64,127,127",
+			"hrefLink": "./oldale.html"
+		},
+		{
+			"altName": "House 2",
+			"coodString": "224,208,287,271",
+			"hrefLink": "./oldale.html"
+		}
+	]
+}
