@@ -2,8 +2,12 @@
 	font-family: "Arial";
 }
 
-.world {
+.navItem {
 	display: block;
+}
+
+.world {
+	
 }
 
 .warp {
