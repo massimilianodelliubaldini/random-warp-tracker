@@ -2,9 +2,15 @@ function main() {
 
 	var selectedWarp = {};
 
-	$('.world').click( function(e) {
+	$('.navItem').click( function(e) {
 		e.preventDefault(); 
 		loadWorld(e.target.id);
+		return false; 
+	});
+
+	$('.world').hover( function(e) {
+		e.preventDefault(); 
+		flashDetails();
 		return false; 
 	});
 
@@ -15,8 +21,7 @@ function main() {
 	});
 
 	$('.warp').dblclick( function(e) {
-		e.preventDefault(); 
-
+		e.preventDefault();
 		if(selectedWarp === {}) {
 			startDoubleLink(e);
 			selectedWarp = e;
@@ -25,7 +30,6 @@ function main() {
 			finishDoubleLink(selectedWarp, e);
 			selectedWarp = {};
 		}
-		
 		return false; 
 	});
 
@@ -44,27 +48,39 @@ function main() {
 }
 
 function loadWorld(worldName) {
+	console.log("Loading World " + worldName + ".");
 
-	console.log("Loading World: " + worldName + ".");
-	var worldPath = "../worlds/json/" + worldName + ".json";
+	var worldPath = "./worlds/json/" + worldName + ".json";
 	fetch(worldPath)
 		.then(response => response.json())
-		.then(data => console.log(data))
+		.then(data => {
+			console.log(data);
+
+			$("#currentWorldImage").attr("src", data.imagePath);
+			$("#currentWorldMap").empty();
+			for (var w in data.warps) {
+				$("#currentWorldMap").append("<area shape='rect' coord='" + w.coordString + "' alt='" + w.altName + "' class='warp'>");
+			}
+		})
 		.catch(error => console.log(error));
 }
 
+function flashDetails(worldName) {
+	console.log("Flashing details of " + worldName + ".");
+}
+
 function startDoubleLink(firstLink) {
-	console.log("Starting Double Link at: " + firstLink + ".");
+	console.log("Starting Double Link at " + firstLink + ".");
 }
 
 function finishDoubleLink(firstLink, secondLink) {
-	console.log("Finishing Double Link from: " + firstLink + " to " + secondLink + ".");
+	console.log("Finishing Double Link from " + firstLink + " to " + secondLink + ".");
 }
 
 function startSingleLink(firstLink) {
-	console.log("Starting Single Link at: " + firstLink + ".");
+	console.log("Starting Single Link at " + firstLink + ".");
 }
 
 function finishSingleLink(firstLink, secondLink) {
-	console.log("Finishing Single Link from: " + firstLink + " to " + secondLink + ".");
+	console.log("Finishing Single Link from " + firstLink + " to " + secondLink + ".");
 }
