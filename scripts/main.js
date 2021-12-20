@@ -32,7 +32,7 @@ function setupWarps() {
 
 	$('.warp').dblclick( function(e) {
 		e.preventDefault();
-		if(selectedWarp === {}) {
+		if(selectedWarp == "") {
 			startDoubleLink(e.target.id);
 			selectedWarp = e.target.id;
 		}
@@ -45,7 +45,7 @@ function setupWarps() {
 
 	$('.warp').contextmenu( function(e) {
 		e.preventDefault(); 
-		if(selectedWarp === {}) {
+		if(selectedWarp == "") {
 			startSingleLink(e.target.id);
 			selectedWarp = e.target.id;
 		}
