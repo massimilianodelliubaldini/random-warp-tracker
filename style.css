@@ -6,6 +6,11 @@
 	display: block;
 }
 
+.controlItem {
+	display: block;
+	font-style: italic;
+}
+
 .world {
 	
 }

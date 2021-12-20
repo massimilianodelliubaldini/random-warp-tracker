@@ -17,31 +17,42 @@
 			});*/
 
 		</script>
-		<div id="nav" style="display:inline-block">
-			<h2>Main Navigation</h2>
-			<span class="navItem" id="keyLocations">All Key Locations</span>
-			<span class="navItem" id="pokeCenters">All PokeCenters</span>
-			<span class="navItem" id="deptStore">The Department Store</span>
-			<h4>Towns and Cities</h4>
-			<span class="navItem" id="dewford">Dewford Town</span>
-			<span class="navItem" id="evergrande">Ever Grande City</span>
-			<span class="navItem" id="fallarbor">Fallarbor Town</span>
-			<span class="navItem" id="fortree">Fortree City</span>
-			<span class="navItem" id="lavaridge">Lavaridge Town</span>
-			<span class="navItem" id="lilycove">Lilycove City</span>
-			<span class="navItem" id="mauville">Mauville City</span>
-			<span class="navItem" id="mossdeep">Mossdeep City</span>
-			<span class="navItem" id="oldale">Oldale Town</span>
-			<span class="navItem" id="pacifidlog">Pacifidlog Town</span>
-			<span class="navItem" id="petalburg">Petalburg City</span>
-			<span class="navItem" id="rustboro">Rustboro City</span>
-			<span class="navItem" id="slateport">Slateport City</span>
-			<span class="navItem" id="sootopolis">Sootopolis City</span>
-			<h4>Other Branching Locations</h4>
+		<div id="controls" style="display:block">
+			<h2>Controls</h2>
+			<ul>
+				<li class="controlItem">Left click a navigation item to load that item.</li>
+				<li class="controlItem">Left click a warp point to travel through it.</li>
+				<li class="controlItem">Double click a warp point to create a 2-way link to another point. Repeat on another point to bind the warp points.</li>
+				<li class="controlItem">Right click a warp point to create a 1-way link to another point. Repeat on another point to bind the warp points.</li>
+			</ul>
 		</div>
-		<div id="currentWorld" style="display:inline-block">
-			<img id="currentWorldImage" src="" usemap="#currentMap" class="map"/>
-			<map id="currentWorldMap" name="currentMap" class="world"></map>
+		<div style="display:block">
+			<div id="nav" style="display:inline-block">
+				<h2>Main Navigation</h2>
+				<span class="navItem" id="keyLocations">All Key Locations</span>
+				<span class="navItem" id="pokeCenters">All PokeCenters</span>
+				<span class="navItem" id="deptStore">The Department Store</span>
+				<h4>Towns and Cities</h4>
+				<span class="navItem" id="dewford">Dewford Town</span>
+				<span class="navItem" id="evergrande">Ever Grande City</span>
+				<span class="navItem" id="fallarbor">Fallarbor Town</span>
+				<span class="navItem" id="fortree">Fortree City</span>
+				<span class="navItem" id="lavaridge">Lavaridge Town</span>
+				<span class="navItem" id="lilycove">Lilycove City</span>
+				<span class="navItem" id="mauville">Mauville City</span>
+				<span class="navItem" id="mossdeep">Mossdeep City</span>
+				<span class="navItem" id="oldale">Oldale Town</span>
+				<span class="navItem" id="pacifidlog">Pacifidlog Town</span>
+				<span class="navItem" id="petalburg">Petalburg City</span>
+				<span class="navItem" id="rustboro">Rustboro City</span>
+				<span class="navItem" id="slateport">Slateport City</span>
+				<span class="navItem" id="sootopolis">Sootopolis City</span>
+				<h4>Other Branching Locations</h4>
+			</div>
+			<div id="currentWorld" style="display:inline-block">
+				<img id="currentWorldImage" src="" usemap="#currentMap" class="map"/>
+				<map id="currentWorldMap" name="currentMap" class="world"></map>
+			</div>
 		</div>
 	</body>
 </html>
