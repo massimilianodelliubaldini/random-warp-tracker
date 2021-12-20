@@ -8,11 +8,19 @@ function main() {
 		return false; 
 	});
 
+	setupWorlds();
+	setupWarps();
+}
+
+function setupWorlds() {
 	$('.world').hover( function(e) {
 		e.preventDefault(); 
 		flashDetails();
 		return false; 
 	});
+}
+
+function setupWarps() {
 
 	$('.warp').click( function(e) {
 		e.preventDefault(); 
@@ -60,8 +68,15 @@ function loadWorld(worldName) {
 			$("#currentWorldMap").empty();
 			for (var i = 0; i < data.warps.length; i++) {
 				var warp = data.warps[i];
-				var area = "<area shape='rect' coords='" + warp.coordString + "' alt='" + warp.altName + "' class='warp'>";
+				var area = document.createElement("area");
+
+				area.shape = "rect";
+				area.class = "warp";
+				area.coords = warp.coordString;
+				area.alt = warp.altName;
+
 				$("#currentWorldMap").append(area);
+				setupWarps();
 			}
 		})
 		.catch(error => console.log(error));
