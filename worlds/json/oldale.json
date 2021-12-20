@@ -1,5 +1,5 @@
 {
-	"imagePath": "../images/Oldale_Town_E.png",
+	"imagePath": "./worlds/images/Oldale_Town_E.png",
 	"warps": 
 	[
 		{
