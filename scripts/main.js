@@ -1,6 +1,7 @@
-function main() {
+var selectedWarp = "";
+var warpDictionary = {};
 
-	var selectedWarp = {};
+function main() {
 
 	$('.navItem').click( function(e) {
 		e.preventDefault(); 
@@ -13,6 +14,7 @@ function main() {
 }
 
 function setupWorlds() {
+
 	$('.world').hover( function(e) {
 		e.preventDefault(); 
 		flashDetails();
@@ -24,19 +26,19 @@ function setupWarps() {
 
 	$('.warp').click( function(e) {
 		e.preventDefault(); 
-		loadWorld(e.target.id);
+		travelThru(e.target.id);
 		return false; 
 	});
 
 	$('.warp').dblclick( function(e) {
 		e.preventDefault();
 		if(selectedWarp === {}) {
-			startDoubleLink(e);
-			selectedWarp = e;
+			startDoubleLink(e.target.id);
+			selectedWarp = e.target.id;
 		}
 		else {
-			finishDoubleLink(selectedWarp, e);
-			selectedWarp = {};
+			finishDoubleLink(selectedWarp, e.target.id);
+			selectedWarp = "";
 		}
 		return false; 
 	});
@@ -44,19 +46,19 @@ function setupWarps() {
 	$('.warp').contextmenu( function(e) {
 		e.preventDefault(); 
 		if(selectedWarp === {}) {
-			startSingleLink(e);
-			selectedWarp = e;
+			startSingleLink(e.target.id);
+			selectedWarp = e.target.id;
 		}
 		else {
-			finishSingleLink(selectedWarp, e);
-			selectedWarp = {};
+			finishSingleLink(selectedWarp, e.target.id);
+			selectedWarp = "";
 		}
 		return false; 
 	});
 }
 
 function loadWorld(worldName) {
-	console.log("Loading World " + worldName + ".");
+	console.log("Loading world " + worldName + ".");
 
 	var worldPath = "./worlds/json/" + worldName + ".json";
 	fetch(worldPath)
@@ -79,6 +81,28 @@ function loadWorld(worldName) {
 		.catch(error => console.log(error));
 }
 
+function travelThru(source) {
+	console.log("Traveling thru " + source + ".");
+
+	if(source.includes("."))
+	{
+		var dest = warpDictionary[source];
+		if(dest)
+		{
+			var destWorld = dest.split(".")[0];
+			loadWorld(destWorld);
+		}
+		else
+		{
+			console.log("Travel cancelled, " + source + " is not linked to a destination.");
+		}
+	}
+	else
+	{
+		console.log("Travel cancelled, " + source + " is not a warp ID (worldName.warpName).");
+	}
+}
+
 function flashDetails(worldName) {
 	console.log("Flashing details of " + worldName + ".");
 }
@@ -89,6 +113,9 @@ function startDoubleLink(firstLink) {
 
 function finishDoubleLink(firstLink, secondLink) {
 	console.log("Finishing Double Link from " + firstLink + " to " + secondLink + ".");
+
+	warpDictionary[firstLink] = secondLink;
+	warpDictionary[secondLink] = firstLink;
 }
 
 function startSingleLink(firstLink) {
@@ -97,4 +124,6 @@ function startSingleLink(firstLink) {
 
 function finishSingleLink(firstLink, secondLink) {
 	console.log("Finishing Single Link from " + firstLink + " to " + secondLink + ".");
+
+	warpDictionary[firstLink] = secondLink;
 }
