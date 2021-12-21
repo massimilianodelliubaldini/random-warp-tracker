@@ -139,4 +139,5 @@ function finishSingleLink(firstLink, secondLink) {
 
 function log(s) {
 	$("#hist")[0].value += s + "\n";
+    $('#hist').scrollTop($('#hist')[0].scrollHeight);
 }
