@@ -61,12 +61,11 @@ function setupWarps() {
 }
 
 function loadWorld(worldName) {
-	console.log("Loading world " + worldName + ".");
-
+	log("Loading world " + worldName + ".");
+	
 	fetch(jsonPath + worldName + ".json")
 		.then(response => response.json())
 		.then(data => {
-			console.log(data);
 
 			$("#currentWorldImage").attr("src", imagePath + data.imageName);
 			$("#currentWorldMap").empty();
@@ -84,7 +83,7 @@ function loadWorld(worldName) {
 }
 
 function travelThru(source) {
-	console.log("Traveling thru " + source + ".");
+	log("Traveling thru " + source + ".");
 
 	if(source.includes("."))
 	{
@@ -96,36 +95,39 @@ function travelThru(source) {
 		}
 		else
 		{
-			console.log("Travel cancelled, " + source + " is not linked to a destination.");
+			log("Travel cancelled, " + source + " is not linked to a destination.");
 		}
 	}
 	else
 	{
-		console.log("Travel cancelled, " + source + " is not a warp ID (worldName.warpName).");
+		log("Travel cancelled, " + source + " is not a warp ID (worldName.warpName).");
 	}
 }
 
 function flashDetails(worldName) {
-	console.log("Flashing details of " + worldName + ".");
 }
 
 function startDoubleLink(firstLink) {
-	console.log("Starting Double Link at " + firstLink + ".");
+	log("Starting Double Link at " + firstLink + ".");
 }
 
 function finishDoubleLink(firstLink, secondLink) {
-	console.log("Finishing Double Link from " + firstLink + " to " + secondLink + ".");
+	log("Finishing Double Link from " + firstLink + " to " + secondLink + ".");
 
 	warpDictionary[firstLink] = secondLink;
 	warpDictionary[secondLink] = firstLink;
 }
 
 function startSingleLink(firstLink) {
-	console.log("Starting Single Link at " + firstLink + ".");
+	log("Starting Single Link at " + firstLink + ".");
 }
 
 function finishSingleLink(firstLink, secondLink) {
-	console.log("Finishing Single Link from " + firstLink + " to " + secondLink + ".");
+	log("Finishing Single Link from " + firstLink + " to " + secondLink + ".");
 
 	warpDictionary[firstLink] = secondLink;
+}
+
+function log(s) {
+	$("#hist").value += "\n" + s;
 }

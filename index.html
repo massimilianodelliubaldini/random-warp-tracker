@@ -17,7 +17,7 @@
 			});*/
 
 		</script>
-		<div id="controls" style="display:block">
+		<div class="vdiv">
 			<h2>Controls</h2>
 			<ul>
 				<li class="controlItem">Left click a navigation item to load that world.</li>
@@ -26,8 +26,12 @@
 				<li class="controlItem">Right click a warp point to create a 1-way link. Repeat on another point to bind them together.</li>
 			</ul>
 		</div>
-		<div style="display:block">
-			<div style="display:inline-block">
+		<div class="vdiv">
+			<h2>History</h2>
+			<textarea id="hist" rows="5" cols="200" readonly></textarea>
+		</div>
+		<div class="vdiv">
+			<div class="hdiv">
 				<h2>Main Navigation</h2>
 				<span class="navItem" id="keyLocations">All Key Locations</span>
 				<span class="navItem" id="pokeCenters">All PokeCenters</span>
@@ -49,7 +53,7 @@
 				<span class="navItem" id="sootopolis">Sootopolis City</span>
 				<h4>Other Branching Locations</h4>
 			</div>
-			<div style="display:inline-block">
+			<div class="hdiv">
 				<img id="currentWorldImage" src="" usemap="#currentMap" class="map world"/>
 				<map id="currentWorldMap" name="currentMap"></map>
 			</div>

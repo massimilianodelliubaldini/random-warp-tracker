@@ -2,6 +2,15 @@
 	font-family: "Arial";
 }
 
+.hdiv {
+	vertical-align: top;
+	display: inline-block;
+}
+
+.vdiv {
+	display: block;
+}
+
 .navItem {
 	display: block;
 }
