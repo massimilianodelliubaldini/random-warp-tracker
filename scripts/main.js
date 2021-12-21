@@ -1,4 +1,5 @@
 var imagePath = "./worlds/images/";
+var jsonPath = "./worlds/json/";
 
 var selectedWarp = "";
 var warpDictionary = {};
@@ -62,8 +63,7 @@ function setupWarps() {
 function loadWorld(worldName) {
 	console.log("Loading world " + worldName + ".");
 
-	var worldPath = "./worlds/json/" + worldName + ".json";
-	fetch(worldPath)
+	fetch(jsonPath + worldName + ".json")
 		.then(response => response.json())
 		.then(data => {
 			console.log(data);
