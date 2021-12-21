@@ -90,14 +90,14 @@ function getHilight(id) {
 	if(dest) {
 		var source = warpDictionary[dest];
 		if(source) {
-			return {'strokeColor':'0080ff','strokeWidth':5,'fillColor':'0080ff','fillOpacity':0.6};
+			return {'strokeColor':'0080ff','strokeWidth':4,'fillColor':'0080ff','fillOpacity':0.4};
 		}
 		else {
-			return {'strokeColor':'00ffff','strokeWidth':5,'fillColor':'00ffff','fillOpacity':0.6};
+			return {'strokeColor':'00ffff','strokeWidth':4,'fillColor':'00ffff','fillOpacity':0.4};
 		}
 	}
 	else {
-		return {'strokeColor':'ffffff','strokeWidth':5,'fillColor':'ffffff','fillOpacity':0.6};
+		return {'strokeColor':'ffffff','strokeWidth':4,'fillColor':'ffffff','fillOpacity':0.4};
 	}	
 }
 
