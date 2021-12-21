@@ -1,0 +1,50 @@
+{
+	"imageName": "Rustboro_City_E.png",
+	"warps": 
+	[
+		{
+			"altName": "PokeCenter",
+			"coordString": "240,560,303,623"
+		},
+		{
+			"altName": "PokeMart",
+			"coordString": "240,680,303,735"
+		},
+		{
+			"altName": "Gym",
+			"coordString": "384,240,479,319"
+		},
+		{
+			"altName": "Devon HQ",
+			"coordString": "112,112,271,255"
+		},
+		{
+			"altName": "Gym House",
+			"coordString": "496,240,575,319"
+		},
+		{
+			"altName": "Wide House",
+			"coordString": "144,400,287,495"
+		},
+		{
+			"altName": "Tree House",
+			"coordString": "448,384,527,463"
+		},
+		{
+			"altName": "School",
+			"coordString": "384,480,495,559"
+		},
+		{
+			"altName": "Cut House",
+			"coordString": "112,544,191,623"
+		},
+		{
+			"altName": "Tall House",
+			"coordString": "48,688,159,831"
+		},
+		{
+			"altName": "Mart House",
+			"coordString": "384,672,479,751"
+		}
+	]
+}

@@ -1,0 +1,50 @@
+{
+	"imageName": "Lilycove_City_E.png",
+	"warps": 
+	[
+		{
+			"altName": "PokeCenter",
+			"coordString": "368,176,431,239"
+		},
+		{
+			"altName": "Dept Store",
+			"coordString": "368,0,511,111"
+		},
+		{
+			"altName": "Contest Hall",
+			"coordString": "320,296,431,399"
+		},
+		{
+			"altName": "Upper House 1",
+			"coordString": "560,48,623,111"
+		},
+		{
+			"altName": "Upper House 2",
+			"coordString": "656,48,719,111"
+		},
+		{
+			"altName": "Cliff House",
+			"coordString": "864,192,927,255"
+		},
+		{
+			"altName": "Ground House 1",
+			"coordString": "176,176,239,239"
+		},
+		{
+			"altName": "Ground House 2",
+			"coordString": "592,176,671,239"
+		},
+		{
+			"altName": "Ground House 3",
+			"coordString": "160,304,223,367"
+		},
+		{
+			"altName": "Shipyard",
+			"coordString": "144,432,255,527"
+		},
+		{
+			"altName": "Motel",
+			"coordString": "576,320,671,399"
+		}
+	]
+}

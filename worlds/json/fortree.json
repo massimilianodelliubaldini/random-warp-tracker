@@ -1,0 +1,42 @@
+{
+	"imageName": "Fortree_City_E.png",
+	"warps": 
+	[
+		{
+			"altName": "PokeCenter",
+			"coordString": "64,48,,127,111"
+		},
+		{
+			"altName": "PokeMart",
+			"coordString": "48,184,111,239"
+		},
+		{
+			"altName": "Gym",
+			"coordString": "304,112,399,191"
+		},
+		{
+			"altName": "House 1",
+			"coordString": "144,16,191,63"
+		},
+		{
+			"altName": "House 2",
+			"coordString": "256,16,303,63"
+		},
+		{
+			"altName": "House 3",
+			"coordString": "384,16,431,63"
+		},
+		{
+			"altName": "House 4",
+			"coordString": "496,0,543,47"
+		},
+		{
+			"altName": "House 5",
+			"coordString": "176,176,223,223"
+		},
+		{
+			"altName": "House 6",
+			"coordString": "576,176,623,223"
+		}
+	]
+}

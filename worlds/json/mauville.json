@@ -1,0 +1,35 @@
+{
+	"imageName": "Mauville_City_E.png",
+	"warps": 
+	[
+		{
+			"altName": "PokeCenter",
+			"coordString": "336,32,399,95", 
+			
+		},
+		{
+			"altName": "PokeMart",
+			"coordString": "352,184,415,239"
+		},
+		{
+			"altName": "Gym",
+			"coordString": "80,16,175,95"
+		},
+		{
+			"altName": "Bike Shop",
+			"coordString": "544,32,623,95"
+		},
+		{
+			"altName": "Game Corner",
+			"coordString": "80,160,191,231"
+		},
+		{
+			"altName": "House 1",
+			"coordString": "288,176,351,239"
+		},
+		{
+			"altName": "House 2",
+			"coordString": "496,176,575,239"
+		}
+	]
+}

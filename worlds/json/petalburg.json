@@ -1,0 +1,30 @@
+{
+	"imageName": "Petalburg_City_E.png",
+	"warps": 
+	[
+		{
+			"altName": "PokeCenter",
+			"coordString": "304,208,367,273"
+		},
+		{
+			"altName": "PokeMart",
+			"coordString": "384,152,447,207"
+		},
+		{
+			"altName": "Gym",
+			"coordString": "192,64,287,143"
+		},
+		{
+			"altName": "Wally House",
+			"coordString": "80,32,158,95"
+		},
+		{
+			"altName": "Lake House",
+			"coordString": "144,256,207,319"
+		},
+		{
+			"altName": "Garden House",
+			"coordString": "304,336,367,399"
+		}
+	]
+}

@@ -1,31 +1,26 @@
 {
-	"imagePath": "./worlds/images/Dewford_Town_E.png",
+	"imageName": "Dewford_Town_E.png",
 	"warps": 
 	[
 		{
 			"altName": "PokeCenter",
-			"coordString": "16,112,79,175",
-			"hrefLink": "./dewford.html"
+			"coordString": "16,112,79,175"
 		},
 		{
 			"altName": "Gym",
-			"coordString": "80,208,175,287",
-			"hrefLink": "./dewford.html"
+			"coordString": "80,208,175,287"
 		},
 		{
 			"altName": "House 1",
-			"coordString": "16,0,96,63",
-			"hrefLink": "./dewford.html"
+			"coordString": "16,0,96,63"
 		},
 		{
 			"altName": "House 2",
-			"coordString": "112,80,175,143",
-			"hrefLink": "./dewford.html"
+			"coordString": "112,80,175,143"
 		},
 		{
 			"altName": "House 3",
-			"coordString": "256,176,319,239",
-			"hrefLink": "./dewford.html"
+			"coordString": "256,176,319,239"
 		}
 	]
 }

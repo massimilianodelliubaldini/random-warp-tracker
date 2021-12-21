@@ -1,0 +1,30 @@
+{
+	"imageName": "Pacifidlog_Town_E.png",
+	"warps": 
+	[
+		{
+			"altName": "PokeCenter",
+			"coordString": "112,192,175,255"
+		},
+		{
+			"altName": "House 1",
+			"coordString": "16,144,63,207"
+		},
+		{
+			"altName": "House 2",
+			"coordString": "240,160,287,223"
+		},
+		{
+			"altName": "House 3",
+			"coordString": "32,304,79,367"
+		},
+		{
+			"altName": "House 4",
+			"coordString": "176,336,223,399"
+		},
+		{
+			"altName": "House 5",
+			"coordString": "256,288,303,351"
+		}
+	]
+}

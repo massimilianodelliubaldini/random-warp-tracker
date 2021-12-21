@@ -1,0 +1,54 @@
+{
+	"imageName": "Sootopolis_City_E.png",
+	"warps": 
+	[
+		{
+			"altName": "PokeCenter",
+			"coordString": "672,448,735,511"
+		},
+		{
+			"altName": "PokeMart",
+			"coordString": "256,424,319,479"
+		},
+		{
+			"altName": "Gym",
+			"coordString": "448,448,543,527"
+		},
+		{
+			"altName": "West House 1",
+			"coordString": "128,40,175,111"
+		},
+		{
+			"altName": "West House 2",
+			"coordString": "128,216,175,287"
+		},
+		{
+			"altName": "West House 3",
+			"coordString": "128,368,175,431"
+		},
+		{
+			"altName": "West House 4",
+			"coordString": "112,512,159,575"
+		},
+		{
+			"altName": "East House1",
+			"coordString": "704,48,751,111"
+		},
+		{
+			"altName": "East House 2",
+			"coordString": "688,216,735,287"
+		},
+		{
+			"altName": "East House 3",
+			"coordString": "752,352,799,415"
+		},
+		{
+			"altName": "East House 4",
+			"coordString": "832,400,879,463"
+		},
+		{
+			"altName": "East House 5",
+			"coordString": "800,528,847,591"
+		}
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"imageName": "Slateport_City_E.png",
+	"warps": 
+	[
+		{
+			"altName": "PokeCenter",
+			"coordString": "288,256,351,319"
+		},
+		{
+			"altName": "PokeMart",
+			"coordString": "192,376,255,431"
+		},
+		{
+			"altName": "Contest Hall",
+			"coordString": "128,130,207,207"
+		},
+		{
+			"altName": "Harbor",
+			"coordString": "400,114,511,207"
+		},
+		{
+			"altName": "North House",
+			"coordString": "64,256,127,319"
+		},
+		{
+			"altName": "Club House",
+			"coordString": "32,360,111,431"
+		},
+		{
+			"altName": "Museum",
+			"coordString": "448,360,543,439"
+		},
+		{
+			"altName": "Shipyard",
+			"coordString": "384,512,511,623"
+		},
+		{
+			"altName": "South House",
+			"coordString": "320,656,383,719"
+		}
+	]
+}

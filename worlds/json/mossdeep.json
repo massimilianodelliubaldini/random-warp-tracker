@@ -1,0 +1,46 @@
+{
+	"imageName": "Mossdeep_City_E.png",
+	"warps": 
+	[
+		{
+			"altName": "PokeCenter",
+			"coordString": "432,208,495,271"
+		},
+		{
+			"altName": "PokeMart",
+			"coordString": "576,248,639,303"
+		},
+		{
+			"altName": "Gym",
+			"coordString": "560,80,655,159"
+		},
+		{
+			"altName": "West House 1",
+			"coordString": "288,112,351,175"
+		},
+		{
+			"altName": "West House 2",
+			"coordString": "432,96,495,159"
+		},
+		{
+			"altName": "West House 3",
+			"coordString": "272,208,335,271"
+		},
+		{
+			"altName": "West House 4",
+			"coordString": "560,328,639,399"
+		},
+		{
+			"altName": "East House 1",
+			"coordString": "768,48,831,111"
+		},
+		{
+			"altName": "East House 2",
+			"coordString": "1056,352,1119,415"
+		},
+		{
+			"altName": "Space Center",
+			"coordString": "960,128,1103,255"
+		}
+	]
+}

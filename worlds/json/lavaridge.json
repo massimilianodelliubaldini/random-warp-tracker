@@ -1,0 +1,30 @@
+{
+	"imageName": "Lavaridge_Town_E.png",
+	"warps": 
+	[
+		{
+			"altName": "PokeCenter",
+			"coordString": "128,48,191,111"
+		},
+		{
+			"altName": "PokeMart",
+			"coordString": "224,40,287,95"
+		},
+		{
+			"altName": "Gym",
+			"coordString": "32,176,127,255"
+		},
+		{
+			"altName": "House 1",
+			"coordString": "176,192,239,255"
+		},
+		{
+			"altName": "House 2",
+			"coordString": "240,192,303,255"
+		},
+		{
+			"altName": "Hot Spring",
+			"coordString": "36,32,123,111"
+		}
+	]
+}

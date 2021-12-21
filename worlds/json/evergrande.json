@@ -1,0 +1,22 @@
+{
+	"imageName": "Ever_Grande_City_E.png",
+	"warps": 
+	[
+		{
+			"altName": "PokeCenter",
+			"coordString": "416,720,479,783"
+		},
+		{
+			"altName": "Pokemon League",
+			"coordString": "208,0,383,115"
+		},
+		{
+			"altName": "North Victory Road",
+			"coordString": "272,400,319,447"
+		},
+		{
+			"altName": "South Victory Road",
+			"coordString": "272,624,319,671"
+		}
+	]
+}
