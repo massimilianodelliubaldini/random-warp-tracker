@@ -6,7 +6,7 @@ var warpDictionary = {};
 
 function main() {
 
-	$('.navItem').click( function(e) {
+	$(".navItem").click( function(e) {
 		e.preventDefault(); 
 		loadWorld(e.target.id);
 		return false; 
@@ -18,7 +18,7 @@ function main() {
 
 function setupWorlds() {
 
-	$('.world').hover( function(e) {
+	$(".world").hover( function(e) {
 		e.preventDefault(); 
 		flashDetails();
 		return false; 
@@ -27,13 +27,13 @@ function setupWorlds() {
 
 function setupWarps() {
 
-	$('.warp').click( function(e) {
+	$(".warp").click( function(e) {
 		e.preventDefault(); 
 		travelThru(e.target.id);
 		return false; 
 	});
 
-	$('.warp').dblclick( function(e) {
+	$(".warp").dblclick( function(e) {
 		e.preventDefault();
 		if(selectedWarp == "") {
 			startDoubleLink(e.target.id);
@@ -46,7 +46,7 @@ function setupWarps() {
 		return false; 
 	});
 
-	$('.warp').contextmenu( function(e) {
+	$(".warp").contextmenu( function(e) {
 		e.preventDefault(); 
 		if(selectedWarp == "") {
 			startSingleLink(e.target.id);
@@ -73,33 +73,42 @@ function loadWorld(worldName) {
 
 				var warp = data.warps[i];
 				var id = worldName + "." + warp.altName.toLowerCase().replace(" ", "");
+				var hilight = getHilight(id);
 				var area = "<area class='warp' shape='rect' coords='" + warp.coordString + "' id='" + id + "' alt='" + warp.altName + "'>";
 
 				$("#currentWorldMap").append(area);
+				$("#" + id).data("maphilight", hilight);
 			}
 			setupWarps();
 		})
 		.catch(error => console.log(error));
 }
 
-function travelThru(source) {
-	if(source.includes("."))
-	{
-		var dest = warpDictionary[source];
-		if(dest)
-		{
-			log("Traveling thru " + source + ".");
-			var destWorld = dest.split(".")[0];
-			loadWorld(destWorld);
+function getHilight(id) {
+	var dest = warpDictionary[id];
+	if(dest) {
+		var source = warpDictionary[dest];
+		if(source) {
+			return {'strokeColor':'0080ff','strokeWidth':5,'fillColor':'0080ff','fillOpacity':0.6};
 		}
-		else
-		{
-			log(source + " is not linked to a destination.");
+		else {
+			return {'strokeColor':'00ffff','strokeWidth':5,'fillColor':'00ffff','fillOpacity':0.6};
 		}
 	}
-	else
-	{
-		log(source + " is not a warp ID (worldName.warpName).");
+	else {
+		return {'strokeColor':'ffffff','strokeWidth':5,'fillColor':'ffffff','fillOpacity':0.6};
+	}	
+}
+
+function travelThru(source) {
+	var dest = warpDictionary[source];
+	if(dest) {
+		log("Traveling thru " + source + ".");
+		var destWorld = dest.split(".")[0];
+		loadWorld(destWorld);
+	}
+	else {
+		log(source + " is not linked to a destination.");
 	}
 }
 
@@ -128,5 +137,5 @@ function finishSingleLink(firstLink, secondLink) {
 }
 
 function log(s) {
-	$("#hist")[0].value += "\n" + s;
+	$("#hist")[0].value += s + "\n";
 }
