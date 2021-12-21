@@ -125,6 +125,7 @@ function finishDoubleLink(firstLink, secondLink) {
 
 	warpDictionary[firstLink] = secondLink;
 	warpDictionary[secondLink] = firstLink;
+	$(".map").maphilight({alwaysOn:true});
 }
 
 function startSingleLink(firstLink) {
@@ -135,6 +136,7 @@ function finishSingleLink(firstLink, secondLink) {
 	log("Finishing Single Link from " + firstLink + " to " + secondLink + ".");
 
 	warpDictionary[firstLink] = secondLink;
+	$(".map").maphilight({alwaysOn:true});
 }
 
 function log(s) {
