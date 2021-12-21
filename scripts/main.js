@@ -62,7 +62,7 @@ function setupWarps() {
 
 function loadWorld(worldName) {
 	log("Loading world " + worldName + ".");
-	
+
 	fetch(jsonPath + worldName + ".json")
 		.then(response => response.json())
 		.then(data => {
@@ -83,24 +83,23 @@ function loadWorld(worldName) {
 }
 
 function travelThru(source) {
-	log("Traveling thru " + source + ".");
-
 	if(source.includes("."))
 	{
 		var dest = warpDictionary[source];
 		if(dest)
 		{
+			log("Traveling thru " + source + ".");
 			var destWorld = dest.split(".")[0];
 			loadWorld(destWorld);
 		}
 		else
 		{
-			log("Travel cancelled, " + source + " is not linked to a destination.");
+			log(source + " is not linked to a destination.");
 		}
 	}
 	else
 	{
-		log("Travel cancelled, " + source + " is not a warp ID (worldName.warpName).");
+		log(source + " is not a warp ID (worldName.warpName).");
 	}
 }
 
@@ -129,5 +128,5 @@ function finishSingleLink(firstLink, secondLink) {
 }
 
 function log(s) {
-	$("#hist").value += "\n" + s;
+	$("#hist")[0].value += "\n" + s;
 }
