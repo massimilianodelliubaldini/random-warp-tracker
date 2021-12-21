@@ -1,3 +1,5 @@
+var imagePath = "./worlds/images/";
+
 var selectedWarp = "";
 var warpDictionary = {};
 
@@ -66,7 +68,7 @@ function loadWorld(worldName) {
 		.then(data => {
 			console.log(data);
 
-			$("#currentWorldImage").attr("src", data.imagePath);
+			$("#currentWorldImage").attr("src", imagePath + data.imageName);
 			$("#currentWorldMap").empty();
 			for (var i = 0; i < data.warps.length; i++) {
 
