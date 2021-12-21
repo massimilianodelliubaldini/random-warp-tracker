@@ -1,5 +1,6 @@
 var imagePath = "./worlds/images/";
 var jsonPath = "./worlds/json/";
+var splitter = "_";
 
 var selectedWarp = "";
 var warpDictionary = {};
@@ -72,7 +73,7 @@ function loadWorld(worldName) {
 			for (var i = 0; i < data.warps.length; i++) {
 
 				var warp = data.warps[i];
-				var id = worldName + "." + warp.altName.toLowerCase().replace(" ", "");
+				var id = worldName + splitter + warp.altName.toLowerCase().replaceAll(" ", "");
 				var hilight = getHilight(id);
 				var area = "<area class='warp' shape='rect' coords='" + warp.coordString + "' id='" + id + "' alt='" + warp.altName + "'>";
 
@@ -104,7 +105,7 @@ function travelThru(source) {
 	var dest = warpDictionary[source];
 	if(dest) {
 		log("Traveling thru " + source + ".");
-		var destWorld = dest.split(".")[0];
+		var destWorld = dest.split(splitter)[0];
 		loadWorld(destWorld);
 	}
 	else {
