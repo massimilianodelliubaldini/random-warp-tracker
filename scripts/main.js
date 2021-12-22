@@ -193,12 +193,21 @@ function showContextItems(itemKey, warpId) {
 function travelThru(warpId) {
 	var dest = warpDictionary[warpId];
 	if(dest) {
-		log("Traveling through " + friendlyNames[warpId] + " to " + friendlyNames[dest] + ".");
-		var destWorldId = dest.split(splitter)[0];
-		showWorld(destWorldId);
+		if(dest == deadEnd) {
+			log(friendlyNames[warpId] + " is a dead end.");
+		}
+		else if(keyLocations.includes(dest)) {
+			log(friendlyNames[warpId] + " is a key location.");
+		}
+		else
+		{
+			log("Traveling through " + friendlyNames[warpId] + " to " + friendlyNames[dest] + ".");
+			var destWorldId = dest.split(splitter)[0];
+			showWorld(destWorldId);
+		}
 	}
 	else {
-		log(friendlyNames[warpId] + " is not linked to a destination.");
+		log(friendlyNames[warpId] + " is unlinked.");
 	}
 }
 
