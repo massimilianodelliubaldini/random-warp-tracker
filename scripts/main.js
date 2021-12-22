@@ -5,106 +5,108 @@ var friendlyNames = {};
 function main() {
 
 	var loads = [];
-	loadWorlds().then( function() {
-		$(".world").each( function() {
-			loads.push(loadWorld($(this)[0].id));
-		});
-	});
+	loadWorlds()
+		.then( function() {
+			$(".world").each( function() {
+				loads.push(loadWorld($(this)[0].id));
+			});
+		})
+		.then( function() {
+			Promise.all(loads).then( function() {
 
-	Promise.all(loads).then( function() {
+				$(".navItem").click( function(e) {
+					e.preventDefault(); 
+					showWorld(e.target.id.replace("nav", "world"));
+					$(".navItem").removeClass("selectedItem");
+					$(this).addClass("selectedItem");
+					return false; 
+				});
 
-		$(".navItem").click( function(e) {
-			e.preventDefault(); 
-			showWorld(e.target.id.replace("nav", "world"));
-			$(".navItem").removeClass("selectedItem");
-			$(this).addClass("selectedItem");
-			return false; 
-		});
+				$(".warp").click( function(e) {
+					e.preventDefault(); 
+					travelThru(e.target.id);
+					return false; 
+				});
 
-		$(".warp").click( function(e) {
-			e.preventDefault(); 
-			travelThru(e.target.id);
-			return false; 
-		});
+				$( function () {
+					$.contextMenu({
+						selector: ".warp",
+						animation: {
+							duration: 0, 
+							show: 'slideDown', 
+							hide: 'slideUp'
+						},
+						items: {
+							startLink: {
+								name: "Start Link",
+								visible: function(key, opt) {
+									return showContextItems(key, $(this)[0].id);
+								},
+								callback: function(key, opt) { 
+									startLink($(this)[0].id); 
+								}
+							},
+							cancelLink: {
+								name: "Cancel Link",
+								visible:  function(key, opt) {
+									return showContextItems(key, $(this)[0].id);
+								},
+								callback: function(key, opt) { 
+									cancelLink(); 
+								}
+							},
+							finishTwoWay: {
+								name: "Finish 2-Way Link",
+								visible:  function(key, opt) {
+									return showContextItems(key, $(this)[0].id);
+								},
+								callback: function(key, opt) { 
+									finishDoubleLink($(this)[0].id);
+								}
+							},
+							finishOneWay: {
+								name: "Finish 1-Way Link",
+								visible:  function(key, opt) {
+									return showContextItems(key, $(this)[0].id);
+								},
+								callback: function(key, opt) { 
+									finishSingleLink($(this)[0].id);
+								}
+							},
+							deadEnd: {
+								name: "Dead End",
+								visible: function(key, opt) {
+									return showContextItems(key, $(this)[0].id);
+								},
+								callback: function(key, opt) { 
+									markDeadEnd($(this)[0].id); 
+								}
+							},
+							keyLocation: {
+								name: "Key Location",
+								visible: function(key, opt) {
+									return showContextItems(key, $(this)[0].id);
+								},
+								callback: function(key, opt) { 
+									markKeyLocation($(this)[0].id); 
+								}
+							},
+							unlink: {
+								name: "Unlink",
+								visible:  function(key, opt) {
+									return showContextItems(key, $(this)[0].id);
+								},
+								callback: function(key, opt) { 
+									unlink($(this)[0].id); 
+								}
+							}
+						}
+					});
+				});
 
-		$( function () {
-			$.contextMenu({
-				selector: ".warp",
-				animation: {
-					duration: 0, 
-					show: 'slideDown', 
-					hide: 'slideUp'
-				},
-				items: {
-					startLink: {
-						name: "Start Link",
-						visible: function(key, opt) {
-							return showContextItems(key, $(this)[0].id);
-						},
-						callback: function(key, opt) { 
-							startLink($(this)[0].id); 
-						}
-					},
-					cancelLink: {
-						name: "Cancel Link",
-						visible:  function(key, opt) {
-							return showContextItems(key, $(this)[0].id);
-						},
-						callback: function(key, opt) { 
-							cancelLink(); 
-						}
-					},
-					finishTwoWay: {
-						name: "Finish 2-Way Link",
-						visible:  function(key, opt) {
-							return showContextItems(key, $(this)[0].id);
-						},
-						callback: function(key, opt) { 
-							finishDoubleLink($(this)[0].id);
-						}
-					},
-					finishOneWay: {
-						name: "Finish 1-Way Link",
-						visible:  function(key, opt) {
-							return showContextItems(key, $(this)[0].id);
-						},
-						callback: function(key, opt) { 
-							finishSingleLink($(this)[0].id);
-						}
-					},
-					deadEnd: {
-						name: "Dead End",
-						visible: function(key, opt) {
-							return showContextItems(key, $(this)[0].id);
-						},
-						callback: function(key, opt) { 
-							markDeadEnd($(this)[0].id); 
-						}
-					},
-					keyLocation: {
-						name: "Key Location",
-						visible: function(key, opt) {
-							return showContextItems(key, $(this)[0].id);
-						},
-						callback: function(key, opt) { 
-							markKeyLocation($(this)[0].id); 
-						}
-					},
-					unlink: {
-						name: "Unlink",
-						visible:  function(key, opt) {
-							return showContextItems(key, $(this)[0].id);
-						},
-						callback: function(key, opt) { 
-							unlink($(this)[0].id); 
-						}
-					}
-				}
+				$(".map").maphilight({alwaysOn:true});
 			});
 		});
-
-		$(".map").maphilight({alwaysOn:true});
-	});
 }
 
 function loadWorlds() {
@@ -156,7 +158,7 @@ function loadWorld(worldId) {
 				var area = "<area class='warp unlinked' shape='rect' coords='" + warp.coordString + "' id='" + warpId + "' alt='" + warp.altName + "'>";
 				$("#" + worldId + "Map").append(area);
 				$("#" + warpId).data("maphilight", hilightUnlinked);
-				
+
 				friendlyNames[warpId] = worldName + " " + warp.altName;
 			}
 		})
