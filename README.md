@@ -22,6 +22,18 @@ I wrote this site to practice web development. My goals for this project:
 
 4. **Rapid prototyping:** I'm using GitHub Pages as my web host, which means all the logic is client-side. However, my reliance on JSON means I can't run it locally for testing due to CORS policies (the HowTo page is written to be a static map, so it doesn't need to load JSON). So, I update the site frequently to see my changes in action and adjust as needed.
 
+## To-Do Items
+
+1. Map out the non-city worlds.
+
+2. Figure out how to display the centers and key locations. Maybe HTML tables? How do I make those play nice with the other image-based worlds?
+
+3. Write code comments. There are exactly zero of them. I like the idea of self-documenting code, but in some places that's not feasible. 
+
+4. Move the warp dictionary to a cookie. Currently, if you navigate away from the site, you lose all progress.
+
+99. Write a game selector.
+
 ## Dependencies
 
 * jQuery 3.6.0
