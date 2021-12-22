@@ -21,7 +21,6 @@ function setupWorlds() {
 
 	$(".world").each( function() {
 		loadWorld($(this)[0].id.replaceAll("world", ""));
-		return false; 
 	});
 }
 
