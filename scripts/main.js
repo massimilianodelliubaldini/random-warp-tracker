@@ -64,7 +64,7 @@ function loadWorld(worldId) {
 			for (var i = 0; i < data.warps.length; i++) {
 
 				var warp = data.warps[i];
-				var id = worldName.toLowerCase() + splitter + warp.altName.toLowerCase().replaceAll(" ", "");
+				var id = worldId + splitter + warp.altName.toLowerCase().replaceAll(" ", "");
 				var hilight = getHilight(id);
 				var area = "<area class='warp' shape='rect' coords='" + warp.coordString + "' id='" + id + "' alt='" + warp.altName + "'>";
 
@@ -106,8 +106,8 @@ function travelThru(warpId) {
 	var dest = warpDictionary[warpId];
 	if(dest) {
 		log("Traveling thru " + warpId + ".");
-		var destWorld = dest.split(splitter)[0];
-		loadWorld(destWorld);
+		var destWorldId = dest.split(splitter)[0];
+		showWorld(destWorldId);
 	}
 	else {
 		log(warpId + " is not linked to a destination.");
