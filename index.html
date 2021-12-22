@@ -8,18 +8,8 @@
 		<h1>Randomized Warp Tracker</h1>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
 		<script src="./scripts/jquery.maphilight.min.js" type="text/javascript"></script>
+		<script src="./scripts/constants.js" type="text/javascript"></script>
 		<script src="./scripts/main.js" type="text/javascript"></script>
-		<script type="text/javascript">
-
-			$(document).ready(function() {
-				$(function () {
-					$(".map").maphilight({
-						alwaysOn:true
-					});
-				});
-			});
-
-		</script>
 		<div class="vdiv">
 			<a href="./howto.html">How To Use</a>
 		</div>
@@ -30,29 +20,83 @@
 		<div class="vdiv">
 			<div class="hdiv">
 				<h2>Main Navigation</h2>
-				<a href="javascript:void(0);"><span class="navItem" id="keyLocations">All Key Locations</span></a>
-				<a href="javascript:void(0);"><span class="navItem" id="pokeCenters">All PokeCenters</span></a>
-				<a href="javascript:void(0);"><span class="navItem" id="deptStore">The Department Store</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="keyLocations">All Key Locations</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="pokeCenters">All PokeCenters</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="deptStore">The Department Store</span></a>
 				<h4>Towns and Cities</h4>
-				<a href="javascript:void(0);"><span class="navItem" id="dewford">Dewford Town</span></a>
-				<a href="javascript:void(0);"><span class="navItem" id="evergrande">Ever Grande City</span></a>
-				<a href="javascript:void(0);"><span class="navItem" id="fallarbor">Fallarbor Town</span></a>
-				<a href="javascript:void(0);"><span class="navItem" id="fortree">Fortree City</span></a>
-				<a href="javascript:void(0);"><span class="navItem" id="lavaridge">Lavaridge Town</span></a>
-				<a href="javascript:void(0);"><span class="navItem" id="lilycove">Lilycove City</span></a>
-				<a href="javascript:void(0);"><span class="navItem" id="mauville">Mauville City</span></a>
-				<a href="javascript:void(0);"><span class="navItem" id="mossdeep">Mossdeep City</span></a>
-				<a href="javascript:void(0);"><span class="navItem" id="oldale">Oldale Town</span></a>
-				<a href="javascript:void(0);"><span class="navItem" id="pacifidlog">Pacifidlog Town</span></a>
-				<a href="javascript:void(0);"><span class="navItem" id="petalburg">Petalburg City</span></a>
-				<a href="javascript:void(0);"><span class="navItem" id="rustboro">Rustboro City</span></a>
-				<a href="javascript:void(0);"><span class="navItem" id="slateport">Slateport City</span></a>
-				<a href="javascript:void(0);"><span class="navItem" id="sootopolis">Sootopolis City</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="navDewford">Dewford Town</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="navEvergrande">Ever Grande City</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="navFallarbor">Fallarbor Town</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="navFortree">Fortree City</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="navLavaridge">Lavaridge Town</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="navLilycove">Lilycove City</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="navMauville">Mauville City</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="navMossdeep">Mossdeep City</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="navOldale">Oldale Town</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="navPacifidlog">Pacifidlog Town</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="navPetalburg">Petalburg City</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="navRustboro">Rustboro City</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="navSlateport">Slateport City</span></a>
+				<a class="navItem" href="javascript:void(0);"><span id="navSootopolis">Sootopolis City</span></a>
 				<h4>Other Branching Locations</h4>
 			</div>
-			<div class="hdiv">
-				<img id="currentWorldImage" src="" usemap="#currentMap" class="map world"/>
-				<map id="currentWorldMap" name="currentMap"></map>
+			<div id="worlds" class="hdiv">
+				<div id="worldDewford" class="hdiv world">
+					<img id="worldDewfordImage" src="" usemap="#dewfordMap" class="map"/>
+					<map id="worldDewfordMap" name="dewfordMap"></map>
+				</div>
+				<div id="worldEvergrande" class="hdiv world">
+					<img id="worldEvergrandeImage" src="" usemap="#evergrandeMap" class="map"/>
+					<map id="worldEvergrandeMap" name="evergrandeMap"></map>
+				</div>
+				<div id="worldFallarbor" class="hdiv world">
+					<img id="worldFallarborImage" src="" usemap="#fallarborMap" class="map"/>
+					<map id="worldFallarborMap" name="fallarborMap"></map>
+				</div>
+				<div id="worldFortree" class="hdiv world">
+					<img id="worldFortreeImage" src="" usemap="#fortreeMap" class="map"/>
+					<map id="worldFortreeMap" name="fortreeMap"></map>
+				</div>
+				<div id="worldLavaridge" class="hdiv world">
+					<img id="worldLavaridgeImage" src="" usemap="#dlavaridgeMap" class="map"/>
+					<map id="worldLavaridgeMap" name="lavaridgeMap"></map>
+				</div>
+				<div id="worldLilycove" class="hdiv world">
+					<img id="worldLilycoveImage" src="" usemap="#lilycoveMap" class="map"/>
+					<map id="worldLilycoveMap" name="lilycoveMap"></map>
+				</div>
+				<div id="worldMauville" class="hdiv world">
+					<img id="worldMauvilleImage" src="" usemap="#mauvilleMap" class="map"/>
+					<map id="worldMauvilleMap" name="mauvilleMap"></map>
+				</div>
+				<div id="worldMossdeep" class="hdiv world">
+					<img id="worldMossdeepImage" src="" usemap="#mossdeepMap" class="map"/>
+					<map id="worldMossdeepMap" name="mossdeepMap"></map>
+				</div>
+				<div id="worldOldale" class="hdiv world">
+					<img id="worldOldaleImage" src="" usemap="#oldaleMap" class="map"/>
+					<map id="worldOldaleMap" name="oldaleMap"></map>
+				</div>
+				<div id="worldPacifidlog" class="hdiv world">
+					<img id="worldPacifidlogImage" src="" usemap="#pacifidlogMap" class="map"/>
+					<map id="worldPacifidlogMap" name="pacifidlogMap"></map>
+				</div>
+				<div id="worldPetalburg" class="hdiv world">
+					<img id="worldPetalburgImage" src="" usemap="#petalburgMap" class="map"/>
+					<map id="worldPetalburgMap" name="petalburgMap"></map>
+				</div>
+				<div id="worldRustboro" class="hdiv world">
+					<img id="worldRustboroImage" src="" usemap="#rustboroMap" class="map"/>
+					<map id="worldRustboroMap" name="rustboroMap"></map>
+				</div>
+				<div id="worldSlateport" class="hdiv world">
+					<img id="worldSlateportImage" src="" usemap="#slateportMap" class="map"/>
+					<map id="worldSlateportMap" name="slateportMap"></map>
+				</div>
+				<div id="worldSootopolis" class="hdiv world">
+					<img id="worldSootopolisImage" src="" usemap="#sootopolisMap" class="map"/>
+					<map id="worldSootopolisMap" name="sootopolisMap"></map>
+				</div>
 			</div>
 		</div>
 	</body>

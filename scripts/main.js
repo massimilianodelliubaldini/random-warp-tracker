@@ -1,7 +1,3 @@
-var imagePath = "./worlds/images/";
-var jsonPath = "./worlds/json/";
-var splitter = "_";
-
 var selectedWarp = "";
 var warpDictionary = {};
 
@@ -9,19 +5,22 @@ function main() {
 
 	$(".navItem").click( function(e) {
 		e.preventDefault(); 
-		loadWorld(e.target.id);
+		showWorld(e.target.id.replaceAll("nav", ""));
+		$(".navItem").removeClass("selectedItem");
+		$(this).addClass("selectedItem");
 		return false; 
 	});
 
 	setupWorlds();
 	setupWarps();
+
+	$(".map").maphilight({alwaysOn:true});
 }
 
 function setupWorlds() {
 
-	$(".world").hover( function(e) {
-		e.preventDefault(); 
-		flashDetails();
+	$(".world").each( function() {
+		loadWorld($(this)[0].id.replaceAll("world", ""));
 		return false; 
 	});
 }
@@ -62,42 +61,51 @@ function setupWarps() {
 }
 
 function loadWorld(worldName) {
-	log("Loading world " + worldName + ".");
+	log("Loading " + worldName + ".");
 
-	fetch(jsonPath + worldName + ".json")
+	fetch(jsonPath + worldName.toLowerCase() + ".json")
 		.then(response => response.json())
 		.then(data => {
 
-			$("#currentWorldImage").attr("src", imagePath + data.imageName);
-			$("#currentWorldMap").empty();
+			$("#world" + worldName + "Image").attr("src", imagePath + data.imageName);
 			for (var i = 0; i < data.warps.length; i++) {
 
 				var warp = data.warps[i];
-				var id = worldName + splitter + warp.altName.toLowerCase().replaceAll(" ", "");
+				var id = worldName.toLowerCase() + splitter + warp.altName.toLowerCase().replaceAll(" ", "");
 				var hilight = getHilight(id);
 				var area = "<area class='warp' shape='rect' coords='" + warp.coordString + "' id='" + id + "' alt='" + warp.altName + "'>";
 
-				$("#currentWorldMap").append(area);
+				$("#world" + worldName + "Map").append(area);
 				$("#" + id).data("maphilight", hilight);
 			}
-			setupWarps();
 		})
 		.catch(error => console.log(error));
+}
+
+function showWorld(id) {
+
+	$(".world").removeClass("selectedWorld");
+	$("#" + id).addClass("selectedWorld");
 }
 
 function getHilight(id) {
 	var dest = warpDictionary[id];
 	if(dest) {
-		var source = warpDictionary[dest];
-		if(source) {
-			return {'strokeColor':'0080ff','strokeWidth':4,'fillColor':'0080ff','fillOpacity':0.4};
+		if (dest == "deadend") {
+			return hillight
 		}
 		else {
-			return {'strokeColor':'00ffff','strokeWidth':4,'fillColor':'00ffff','fillOpacity':0.4};
+			var source = warpDictionary[dest];
+			if(source) {
+				return hilightTwoWay;
+			}
+			else {
+				return hilightOneWay;
+			}
 		}
 	}
 	else {
-		return {'strokeColor':'ffffff','strokeWidth':4,'fillColor':'ffffff','fillOpacity':0.4};
+		return hilightUnlinked;
 	}	
 }
 
@@ -111,9 +119,6 @@ function travelThru(source) {
 	else {
 		log(source + " is not linked to a destination.");
 	}
-}
-
-function flashDetails(worldName) {
 }
 
 function startDoubleLink(firstLink) {

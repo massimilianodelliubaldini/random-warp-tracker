@@ -8,15 +8,16 @@
 		<h1>Randomized Warp Tracker</h1>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
 		<script src="./scripts/jquery.maphilight.min.js" type="text/javascript"></script>
+		<script src="./scripts/constants.js" type="text/javascript"></script>
 		<script src="./scripts/main.js" type="text/javascript"></script>
 		<script type="text/javascript">
 
 			$(document).ready(function() {
 				$(function () {
-					$('#oldale_pokecenter').data('maphilight', {'strokeColor':'00ffff','strokeWidth':4,'fillColor':'00ffff','fillOpacity':0.4});
-					$('#oldale_pokemart').data('maphilight', {'strokeColor':'0080ff','strokeWidth':4,'fillColor':'0080ff','fillOpacity':0.4});
-					$('#oldale_house1').data('maphilight', {'strokeColor':'ffffff','strokeWidth':4,'fillColor':'ffffff','fillOpacity':0.4});
-					$('#oldale_house2').data('maphilight', {'strokeColor':'000000','strokeWidth':4,'fillColor':'000000','fillOpacity':0.4});
+					$('#oldale_pokecenter').data('maphilight', hilightOneWay);
+					$('#oldale_pokemart').data('maphilight', hilightTwoWay);
+					$('#oldale_house1').data('maphilight', hilightUnlinked);
+					$('#oldale_house2').data('maphilight', hilightDeadEnd);
 					$(".map").maphilight({
 						alwaysOn:true
 					});
@@ -28,19 +29,20 @@
 			<h2>Controls</h2>
 			<ul>
 				<li class="controlItem">Left click a navigation item to load that world.</li>
+				<li class="controlItem">Hover over a warp point to see where it leads.</li>
 				<li class="controlItem">Left click a warp point to travel through it.</li>
-				<li class="controlItem">Double click a warp point to create a 2-way link. Repeat on another point to bind them together.</li>
-				<li class="controlItem">Right click a warp point to create a 1-way link. Repeat on another point to bind them together.</li>
+				<li class="controlItem">Right click a warp point to link them to other warps.</li>
 			</ul>
 		</div>
 		<div class="vdiv">
 			<h2>Map Legend</h2>
 			<span>Below is a sample of Oldale Town.</span>
 			<ul>
-				<li class="controlItem">House 1 is unlinked.</li>
-				<li class="controlItem">The PokeMart is in a 2-way link with another warp point.</li>
-				<li class="controlItem">The PokeCenter is in a 1-way link with another warp point.</li>
-				<li class="controlItem">House 2 is a dead end.</li>
+				<li class="controlItem">White warps are unlinked.</li>
+				<li class="controlItem">Blue warps are in a 2-way link with another warp point.</li>
+				<li class="controlItem">Cyan warps are in a 1-way link with another warp point (You can enter Cyan, but not return through it).</li>
+				<li class="controlItem">Black warps are a dead end.</li>
+				<li class="controlItem">Gold warps are a key location.</li>
 			</ul>
 		</div>
 		<div class="vdiv">

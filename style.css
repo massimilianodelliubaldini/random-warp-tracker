@@ -13,15 +13,25 @@
 
 .navItem {
 	display: block;
+	line-height: 1.4;
+}
+
+.selectedItem {
+	color: red;
 }
 
 .controlItem {
 	display: block;
 	font-style: italic;
+	line-height: 1.4;
 }
 
 .world {
-	
+	visibility: hidden;
+}
+
+.world.selectedWorld {
+	visibility: visible;
 }
 
 .warp {
