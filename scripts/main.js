@@ -87,8 +87,85 @@ function main() {
 								visible: function(key, opt) {
 									return showContextItems(key, $(this)[0].id);
 								},
-								callback: function(key, opt) { 
-									markKeyLocation($(this)[0].id); 
+								items: {
+									gym_1: {
+										name: "Gym 1",
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
+									gym_2: {
+										name: "Gym 2",
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
+									gym_3: {
+										name: "Gym 3",
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
+									gym_4: {
+										name: "Gym 4",
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
+									gym_5: {
+										name: "Gym 5",
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
+									gym_6: {
+										name: "Gym 6",
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
+									gym_7: {
+										name: "Gym 7",
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
+									gym_8: {
+										name: "Gym 8",
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
+									e4_1: {
+										name: "Elite4 1",
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
+									e4_2: {
+										name: "Elite4 2",
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
+									e4_3: {
+										name: "Elite4 3",
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
+									e4_4: {
+										name: "Elite4 4",
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
+									champion: {
+										name: "Champion",
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
 								}
 							},
 							unlink: {
@@ -201,7 +278,7 @@ function travelThru(warpId) {
 		if(dest == deadEnd) {
 			log(friendlyNames[warpId] + " is a dead end.");
 		}
-		else if(keyLocations.includes(dest)) {
+		else if(Object.keys(keyLocations).includes(dest)) {
 			log(friendlyNames[warpId] + " is a key location.");
 		}
 		else
@@ -265,10 +342,10 @@ function markDeadEnd(warpId) {
 	$(".map").maphilight({alwaysOn:true});
 }
 
-function markKeyLocation(warpId) {
-	log("Marking " + friendlyNames[warpId] + " a key location.");
+function markKeyLocation(key, warpId) {
+	log("Marking " + friendlyNames[warpId] + " as " + keyLocations[key] + ".");
 
-	warpDictionary[warpId] = keyLocations[0];
+	warpDictionary[warpId] = key;
 
 	$("#" + warpId).data("maphilight", hilightKeyLocation);
 	$("#" + warpId).removeClass("unlinked");

@@ -57,3 +57,13 @@
 .warp.keyLocation {
 
 }
+
+.context-menu-item {
+		min-height: 18px;
+		background-repeat: no-repeat;
+		background-position: 4px 4px;
+	}
+    
+.context-menu-item.context-menu-icon-checked {
+	background-image: url("./icons/checkmark.png");
+}
