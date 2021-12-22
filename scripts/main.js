@@ -33,8 +33,8 @@ function main() {
 						selector: ".warp",
 						animation: {
 							duration: 0, 
-							show: 'slideDown', 
-							hide: 'slideUp'
+							show: "slideDown", 
+							hide: "slideUp"
 						},
 						items: {
 							startLink: {
@@ -90,78 +90,117 @@ function main() {
 								items: {
 									gym_1: {
 										name: "Gym 1",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
 									gym_2: {
 										name: "Gym 2",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
 									gym_3: {
 										name: "Gym 3",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
 									gym_4: {
 										name: "Gym 4",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
 									gym_5: {
 										name: "Gym 5",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
 									gym_6: {
 										name: "Gym 6",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
 									gym_7: {
 										name: "Gym 7",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
 									gym_8: {
 										name: "Gym 8",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
 									e4_1: {
 										name: "Elite4 1",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
 									e4_2: {
 										name: "Elite4 2",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
 									e4_3: {
 										name: "Elite4 3",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
 									e4_4: {
 										name: "Elite4 4",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
 									champion: {
 										name: "Champion",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
 										}
