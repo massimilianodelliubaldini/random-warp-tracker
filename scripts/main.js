@@ -121,6 +121,9 @@ function loadWorlds() {
 
 				var nav = "<a class='navItem' href='javascript:void(0);'><span id='nav" + world.worldName + "'>" + world.navName + "</span></a>";
 				switch(world.navType) {
+					case "key":
+						$("#keys").after(nav);
+						break;
 					case "city":
 						$("#cities").after(nav);
 						break;

@@ -3,6 +3,11 @@
 	"worlds": 
 	[
 		{
+			"worldName": "DeptStore",
+			"navName": "The Department Store",
+			"navType": "key"
+		},
+		{
 			"worldName": "Dewford",
 			"navName": "Dewford Town",
 			"navType": "city"
