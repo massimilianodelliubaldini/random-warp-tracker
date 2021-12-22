@@ -11,49 +11,52 @@ function main() {
 		return false; 
 	});
 
-	$(".world").each( function() {
-		loadWorld($(this)[0].id.replace("world", ""));
-	});
+	$(".world").each( function() {		
+		log("Loading " + $(this)[0].id + ".");
+		loadWorld($(this)[0].id).then( function() {
 
-	$(".warp").click( function(e) {
-		e.preventDefault(); 
-		travelThru(e.target.id);
-		return false; 
-	});
+			$(".warp").click( function(e) {
+				e.preventDefault(); 
+				travelThru(e.target.id);
+				return false; 
+			});
 
-	$(".warp").dblclick( function(e) {
-		e.preventDefault();
-		if(selectedWarp == "") {
-			startDoubleLink(e.target.id);
-			selectedWarp = e.target.id;
-		}
-		else {
-			finishDoubleLink(selectedWarp, e.target.id);
-			selectedWarp = "";
-		}
-		return false; 
-	});
+			$(".warp").dblclick( function(e) {
+				e.preventDefault();
+				if(selectedWarp == "") {
+					startDoubleLink(e.target.id);
+					selectedWarp = e.target.id;
+				}
+				else {
+					finishDoubleLink(selectedWarp, e.target.id);
+					selectedWarp = "";
+				}
+				return false; 
+			});
 
-	$(".warp").contextmenu( function(e) {
-		e.preventDefault(); 
-		if(selectedWarp == "") {
-			startSingleLink(e.target.id);
-			selectedWarp = e.target.id;
-		}
-		else {
-			finishSingleLink(selectedWarp, e.target.id);
-			selectedWarp = "";
-		}
-		return false; 
-	});
+			$(".warp").contextmenu( function(e) {
+				e.preventDefault(); 
+				if(selectedWarp == "") {
+					startSingleLink(e.target.id);
+					selectedWarp = e.target.id;
+				}
+				else {
+					finishSingleLink(selectedWarp, e.target.id);
+					selectedWarp = "";
+				}
+				return false; 
+			});
 
-	$(".map").maphilight({alwaysOn:true});
+			$(".map").maphilight({alwaysOn:true});
+			log("Loaded " + $(this)[0].id + ".");
+		});
+	});
 }
 
-function loadWorld(worldName) {
-	log("Loading " + worldName + ".");
+function loadWorld(worldId) {
+	var worldName = worldId.replace("world", "");
 
-	fetch(jsonPath + worldName.toLowerCase() + ".json")
+	return fetch(jsonPath + worldName.toLowerCase() + ".json")
 		.then(response => response.json())
 		.then(data => {
 
@@ -73,14 +76,13 @@ function loadWorld(worldName) {
 }
 
 function showWorld(worldId) {
-
 	$(".world").removeClass("selectedWorld");
 	$("#" + worldId).addClass("selectedWorld");
 	$("#worlds").prepend($("#" + worldId));
 }
 
-function getHilight(id) {
-	var dest = warpDictionary[id];
+function getHilight(warpId) {
+	var dest = warpDictionary[warpId];
 	if(dest) {
 		if (dest == "deadend") {
 			return hilightDeadEnd;
@@ -100,15 +102,15 @@ function getHilight(id) {
 	}	
 }
 
-function travelThru(source) {
-	var dest = warpDictionary[source];
+function travelThru(warpId) {
+	var dest = warpDictionary[warpId];
 	if(dest) {
-		log("Traveling thru " + source + ".");
+		log("Traveling thru " + warpId + ".");
 		var destWorld = dest.split(splitter)[0];
 		loadWorld(destWorld);
 	}
 	else {
-		log(source + " is not linked to a destination.");
+		log(warpId + " is not linked to a destination.");
 	}
 }
 
