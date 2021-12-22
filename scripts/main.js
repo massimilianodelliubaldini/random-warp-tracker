@@ -1,5 +1,6 @@
 var firstLink = "";
 var warpDictionary = {};
+var friendlyNames = {};
 
 function main() {
 
@@ -92,7 +93,7 @@ function main() {
 							return showContextItems(key, $(this)[0].id);
 						},
 						callback: function(key, opt) { 
-							alert("Foo!"); 
+							unlink($(this)[0].id); 
 						}
 					}
 				}
@@ -119,6 +120,8 @@ function loadWorld(worldId) {
 
 				$("#world" + worldName + "Map").append(area);
 				$("#" + warpId).data("maphilight", hilightUnlinked);
+
+				friendlyNames[warpId] = worldName + " " + warp.altName;
 			}
 		})
 		.catch(error => console.log(error));
@@ -131,18 +134,19 @@ function showWorld(worldId) {
 }
 
 function showContextItems(itemKey, warpId) {
+	var isWarpUnlinked = $("#" + warpId)[0].className.includes("unlinked");
 	switch(itemKey) {
 		case "startLink":
 		case "deadEnd":
 		case "keyLocation":
-			return $("#" + warpId)[0].className.includes("unlinked");
+			return isWarpUnlinked;
 		case "cancelLink":
 			return firstLink != "";
 		case "finishTwoWay":
 		case "finishOneWay":
-			return $("#" + warpId)[0].className.includes("unlinked") && firstLink != "";
+			return isWarpUnlinked && firstLink != "" && firstLink != warpId;
 		case "unlink":
-			return !$("#" + warpId)[0].className.includes("unlinked");
+			return !isWarpUnlinked;
 		default:
 			return false;
 	}
@@ -151,17 +155,17 @@ function showContextItems(itemKey, warpId) {
 function travelThru(warpId) {
 	var dest = warpDictionary[warpId];
 	if(dest) {
-		log("Traveling through " + warpId + " to " + dest + ".");
+		log("Traveling through " + friendlyNames[warpId] + " to " + friendlyNames[dest] + ".");
 		var destWorldId = dest.split(splitter)[0];
 		showWorld(destWorldId);
 	}
 	else {
-		log(warpId + " is not linked to a destination.");
+		log(friendlyNames[warpId] + " is not linked to a destination.");
 	}
 }
 
 function startLink(warpId) {
-	log("Starting Link at " + warpId + ".");
+	log("Starting Link at " + friendlyNames[warpId] + ".");
 	firstLink = warpId;
 }
 
@@ -170,8 +174,36 @@ function cancelLink() {
 	firstLink = "";
 }
 
+function unlink(warpId) {
+
+	var dest = warpDictionary[warpId];
+	if(dest) {
+
+		var source = warpDictionary[dest];
+		if(source) {
+
+			log("Uninking " + friendlyNames[dest] + ".");
+
+			delete(warpDictionary[dest]);
+
+			$("#" + dest).data("maphilight", hilightUnlinked);
+			$("#" + dest).removeClass($("#" + dest)[0].className.replace("warp ", ""));
+			$("#" + dest).addClass("unlinked");
+		}		
+		log("Uninking " + friendlyNames[warpId] + ".");
+
+		delete(warpDictionary[warpId]);
+
+		$("#" + warpId).data("maphilight", hilightUnlinked);
+		$("#" + warpId).removeClass($("#" + warpId)[0].className.replace("warp ", ""));
+		$("#" + warpId).addClass("unlinked");
+	}
+
+	$(".map").maphilight({alwaysOn:true});
+}
+
 function markDeadEnd(warpId) {
-	log("Marking " + warpId + " a dead end.");
+	log("Marking " + friendlyNames[warpId] + " a dead end.");
 
 	warpDictionary[warpId] = deadEnd;
 
@@ -183,7 +215,7 @@ function markDeadEnd(warpId) {
 }
 
 function markKeyLocation(warpId) {
-	log("Marking " + warpId + " a key location.");
+	log("Marking " + friendlyNames[warpId] + " a key location.");
 
 	warpDictionary[warpId] = keyLocations[0];
 
@@ -195,7 +227,7 @@ function markKeyLocation(warpId) {
 }
 
 function finishDoubleLink(secondLink) {
-	log("Finishing 2-Way Link from " + firstLink + " to " + secondLink + ".");
+	log("Finishing 2-Way Link from " + friendlyNames[firstLink] + " to " + friendlyNames[secondLink] + ".");
 
 	warpDictionary[firstLink] = secondLink;
 	warpDictionary[secondLink] = firstLink;
@@ -209,11 +241,12 @@ function finishDoubleLink(secondLink) {
 	$("#" + firstLink).addClass("twoWay");
 	$("#" + secondLink).addClass("twoWay");
 
+	firstLink = "";
 	$(".map").maphilight({alwaysOn:true});
 }
 
 function finishSingleLink(secondLink) {
-	log("Finishing 1-Way Link from " + firstLink + " to " + secondLink + ".");
+	log("Finishing 1-Way Link from " + friendlyNames[firstLink] + " to " + friendlyNames[secondLink] + ".");
 
 	warpDictionary[firstLink] = secondLink;
 	warpDictionary[secondLink] = deadEnd;
@@ -227,6 +260,7 @@ function finishSingleLink(secondLink) {
 	$("#" + firstLink).addClass("oneWay");
 	$("#" + secondLink).addClass("deadEnd");
 
+	firstLink = "";
 	$(".map").maphilight({alwaysOn:true});
 }
 

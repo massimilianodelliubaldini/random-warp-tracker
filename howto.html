@@ -16,11 +16,18 @@
 		<script type="text/javascript">
 
 			$(document).ready(function() {
+				friendlyNames = {
+					"worldOldale_pokecenter": "Oldale PokeCenter",
+					"worldOldale_pokemart": "Oldale PokeMart",
+					"worldOldale_house1": "Oldale House 1",
+					"worldOldale_house2": "Oldale House 2"
+				};
+
 				$(function () {
-					$('#worldOldale_pokecenter').data('maphilight', hilightOneWay);
-					$('#worldOldale_pokemart').data('maphilight', hilightTwoWay);
+					$('#worldOldale_pokecenter').data('maphilight', hilightUnlinked);
+					$('#worldOldale_pokemart').data('maphilight', hilightUnlinked);
 					$('#worldOldale_house1').data('maphilight', hilightUnlinked);
-					$('#worldOldale_house2').data('maphilight', hilightDeadEnd);
+					$('#worldOldale_house2').data('maphilight', hilightUnlinked);
 					$(".map").maphilight({alwaysOn:true});
 				});
 			});
@@ -40,7 +47,6 @@
 		</div>
 		<div class="vdiv">
 			<h2>Map Legend</h2>
-			<span>Below is a sample of Oldale Town.</span>
 			<ul>
 				<li class="controlItem">White warps are unlinked.</li>
 				<li class="controlItem">Blue warps are in a 2-way link with another warp point.</li>
@@ -48,14 +54,15 @@
 				<li class="controlItem">Black warps are a dead end.</li>
 				<li class="controlItem">Gold warps are a key location.</li>
 			</ul>
+			<span>Below is a sample of Oldale Town for you to practice.</span>
 		</div>
 		<div class="vdiv">
 			<img src="./worlds/images/Oldale_Town_E.png" usemap="#oldaleMap" class="map"/>
 			<map name="oldaleMap">
-				<area class="warp oneWay" shape="rect" coords="80,208,143,271" id="worldOldale_pokecenter" alt="PokeCenter" />
-				<area class="warp twoWay" shape="rect" coords="208,56,271,111" id="worldOldale_pokemart" alt="PokeMart" />
+				<area class="warp unlinked" shape="rect" coords="80,208,143,271" id="worldOldale_pokecenter" alt="PokeCenter" />
+				<area class="warp unlinked" shape="rect" coords="208,56,271,111" id="worldOldale_pokemart" alt="PokeMart" />
 				<area class="warp unlinked" shape="rect" coords="64,64,127,127" id="worldOldale_house1" alt="House 1" />
-				<area class="warp deadEnd" shape="rect" coords="224,208,287,271" id="worldOldale_house2" alt="House 2" />
+				<area class="warp unlinked" shape="rect" coords="224,208,287,271" id="worldOldale_house2" alt="House 2" />
 			</map>
 		</div>
 	</body>
