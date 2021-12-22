@@ -64,12 +64,12 @@ function loadWorld(worldId) {
 			for (var i = 0; i < data.warps.length; i++) {
 
 				var warp = data.warps[i];
-				var id = worldId + splitter + warp.altName.toLowerCase().replaceAll(" ", "");
-				var hilight = getHilight(id);
-				var area = "<area class='warp' shape='rect' coords='" + warp.coordString + "' id='" + id + "' alt='" + warp.altName + "'>";
+				var warpId = worldId + splitter + warp.altName.toLowerCase().replaceAll(" ", "");
+				var hilight = getHilight(warpId);
+				var area = "<area class='warp' shape='rect' coords='" + warp.coordString + "' id='" + warpId + "' alt='" + warp.altName + "'>";
 
 				$("#world" + worldName + "Map").append(area);
-				$("#" + id).data("maphilight", hilight);
+				$("#" + warpId).data("maphilight", hilight);
 			}
 		})
 		.catch(error => console.log(error));
@@ -105,7 +105,7 @@ function getHilight(warpId) {
 function travelThru(warpId) {
 	var dest = warpDictionary[warpId];
 	if(dest) {
-		log("Traveling thru " + warpId + ".");
+		log("Traveling through " + warpId + " to " + dest + ".");
 		var destWorldId = dest.split(splitter)[0];
 		showWorld(destWorldId);
 	}
@@ -123,7 +123,9 @@ function finishDoubleLink(firstLink, secondLink) {
 
 	warpDictionary[firstLink] = secondLink;
 	warpDictionary[secondLink] = firstLink;
-	$(".map").maphilight({alwaysOn:true});
+
+	$("#" + firstLink).data("maphilight", hilightTwoWay);
+	$("#" + secondLink).data("maphilight", hilightTwoWay);
 }
 
 function startSingleLink(firstLink) {
@@ -134,7 +136,10 @@ function finishSingleLink(firstLink, secondLink) {
 	log("Finishing Single Link from " + firstLink + " to " + secondLink + ".");
 
 	warpDictionary[firstLink] = secondLink;
-	$(".map").maphilight({alwaysOn:true});
+
+	$("#" + firstLink).data("maphilight", hilightOneWay);
+	$("#" + secondLink).data("maphilight", hilightDeadEnd);
+
 }
 
 function log(s) {
