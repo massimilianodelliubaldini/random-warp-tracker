@@ -1,6 +1,7 @@
 var imagePath = "./worlds/images/";
 var jsonPath = "./worlds/json/";
 var splitter = "_";
+var deadEnd = "deadEnd";
 
 var hilightTwoWay = {
 	'strokeColor': '0080ff',
@@ -36,3 +37,19 @@ var hilightKeyLocation = {
 	'fillColor': 'ffff00',
 	'fillOpacity': 0.4
 };
+
+var keyLocations = [
+	"gym_1",
+	"gym_2",
+	"gym_3",
+	"gym_4",
+	"gym_5",
+	"gym_6",
+	"gym_7",
+	"gym_8",
+	"e4_1",
+	"e4_2",
+	"e4_3",
+	"e4_4",
+	"champion"
+];

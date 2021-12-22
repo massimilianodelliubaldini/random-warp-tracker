@@ -1,4 +1,4 @@
-var selectedWarp = "";
+var firstLink = "";
 var warpDictionary = {};
 
 function main() {
@@ -16,37 +16,87 @@ function main() {
 		loads.push(loadWorld($(this)[0].id));
 	});
 
-	Promise.all(loads).then( function () {
+	Promise.all(loads).then( function() {
 		$(".warp").click( function(e) {
 			e.preventDefault(); 
 			travelThru(e.target.id);
 			return false; 
 		});
 
-		$(".warp").dblclick( function(e) {
-			e.preventDefault();
-			if(selectedWarp == "") {
-				startDoubleLink(e.target.id);
-				selectedWarp = e.target.id;
-			}
-			else {
-				finishDoubleLink(selectedWarp, e.target.id);
-				selectedWarp = "";
-			}
-			return false; 
-		});
-
-		$(".warp").contextmenu( function(e) {
-			e.preventDefault(); 
-			if(selectedWarp == "") {
-				startSingleLink(e.target.id);
-				selectedWarp = e.target.id;
-			}
-			else {
-				finishSingleLink(selectedWarp, e.target.id);
-				selectedWarp = "";
-			}
-			return false; 
+		$( function () {
+			$.contextMenu({
+				selector: ".warp",
+				animation: {
+					duration: 0, 
+					show: 'slideDown', 
+					hide: 'slideUp'
+				},
+				items: {
+					startLink: {
+						name: "Start Link",
+						visible: function(key, opt) {
+							return showContextItems(key, $(this)[0].id);
+						},
+						callback: function(key, opt) { 
+							startLink($(this)[0].id); 
+						}
+					},
+					cancelLink: {
+						name: "Cancel Link",
+						visible:  function(key, opt) {
+							return showContextItems(key, $(this)[0].id);
+						},
+						callback: function(key, opt) { 
+							cancelLink(); 
+						}
+					},
+					finishTwoWay: {
+						name: "Finish 2-Way Link",
+						visible:  function(key, opt) {
+							return showContextItems(key, $(this)[0].id);
+						},
+						callback: function(key, opt) { 
+							finishDoubleLink($(this)[0].id);
+						}
+					},
+					finishOneWay: {
+						name: "Finish 1-Way Link",
+						visible:  function(key, opt) {
+							return showContextItems(key, $(this)[0].id);
+						},
+						callback: function(key, opt) { 
+							finishSingleLink($(this)[0].id);
+						}
+					},
+					deadEnd: {
+						name: "Dead End",
+						visible: function(key, opt) {
+							return showContextItems(key, $(this)[0].id);
+						},
+						callback: function(key, opt) { 
+							markDeadEnd($(this)[0].id); 
+						}
+					},
+					keyLocation: {
+						name: "Key Location",
+						visible: function(key, opt) {
+							return showContextItems(key, $(this)[0].id);
+						},
+						callback: function(key, opt) { 
+							markKeyLocation($(this)[0].id); 
+						}
+					},
+					unlink: {
+						name: "Unlink",
+						visible:  function(key, opt) {
+							return showContextItems(key, $(this)[0].id);
+						},
+						callback: function(key, opt) { 
+							alert("Foo!"); 
+						}
+					}
+				}
+			});
 		});
 
 		$(".map").maphilight({alwaysOn:true});
@@ -65,11 +115,10 @@ function loadWorld(worldId) {
 
 				var warp = data.warps[i];
 				var warpId = worldId + splitter + warp.altName.toLowerCase().replaceAll(" ", "");
-				var hilight = getHilight(warpId);
-				var area = "<area class='warp' shape='rect' coords='" + warp.coordString + "' id='" + warpId + "' alt='" + warp.altName + "'>";
+				var area = "<area class='warp unlinked' shape='rect' coords='" + warp.coordString + "' id='" + warpId + "' alt='" + warp.altName + "'>";
 
 				$("#world" + worldName + "Map").append(area);
-				$("#" + warpId).data("maphilight", hilight);
+				$("#" + warpId).data("maphilight", hilightUnlinked);
 			}
 		})
 		.catch(error => console.log(error));
@@ -81,25 +130,22 @@ function showWorld(worldId) {
 	$("#worlds").prepend($("#" + worldId));
 }
 
-function getHilight(warpId) {
-	var dest = warpDictionary[warpId];
-	if(dest) {
-		if (dest == "deadend") {
-			return hilightDeadEnd;
-		}
-		else {
-			var source = warpDictionary[dest];
-			if(source) {
-				return hilightTwoWay;
-			}
-			else {
-				return hilightOneWay;
-			}
-		}
+function showContextItems(itemKey, warpId) {
+	switch(itemKey) {
+		case "startLink":
+		case "deadEnd":
+		case "keyLocation":
+			return $("#" + warpId)[0].className.includes("unlinked");
+		case "cancelLink":
+			return firstLink != "";
+		case "finishTwoWay":
+		case "finishOneWay":
+			return $("#" + warpId)[0].className.includes("unlinked") && firstLink != "";
+		case "unlink":
+			return !$("#" + warpId)[0].className.includes("unlinked");
+		default:
+			return false;
 	}
-	else {
-		return hilightUnlinked;
-	}	
 }
 
 function travelThru(warpId) {
@@ -114,35 +160,82 @@ function travelThru(warpId) {
 	}
 }
 
-function startDoubleLink(firstLink) {
-	log("Starting Double Link at " + firstLink + ".");
+function startLink(warpId) {
+	log("Starting Link at " + warpId + ".");
+	firstLink = warpId;
 }
 
-function finishDoubleLink(firstLink, secondLink) {
-	log("Finishing Double Link from " + firstLink + " to " + secondLink + ".");
+function cancelLink() {
+	log("Cancelling Link.");
+	firstLink = "";
+}
+
+function markDeadEnd(warpId) {
+	log("Marking " + warpId + " a dead end.");
+
+	warpDictionary[warpId] = deadEnd;
+
+	$("#" + warpId).data("maphilight", hilightDeadEnd);
+	$("#" + warpId).removeClass("unlinked");
+	$("#" + warpId).addClass("deadEnd");
+
+	$(".map").maphilight({alwaysOn:true});
+}
+
+function markKeyLocation(warpId) {
+	log("Marking " + warpId + " a key location.");
+
+	warpDictionary[warpId] = keyLocations[0];
+
+	$("#" + warpId).data("maphilight", hilightKeyLocation);
+	$("#" + warpId).removeClass("unlinked");
+	$("#" + warpId).addClass("keyLocation");
+
+	$(".map").maphilight({alwaysOn:true});
+}
+
+function finishDoubleLink(secondLink) {
+	log("Finishing 2-Way Link from " + firstLink + " to " + secondLink + ".");
 
 	warpDictionary[firstLink] = secondLink;
 	warpDictionary[secondLink] = firstLink;
 
 	$("#" + firstLink).data("maphilight", hilightTwoWay);
 	$("#" + secondLink).data("maphilight", hilightTwoWay);
+
+	$("#" + firstLink).removeClass("unlinked");
+	$("#" + secondLink).removeClass("unlinked");
+
+	$("#" + firstLink).addClass("twoWay");
+	$("#" + secondLink).addClass("twoWay");
+
+	$(".map").maphilight({alwaysOn:true});
 }
 
-function startSingleLink(firstLink) {
-	log("Starting Single Link at " + firstLink + ".");
-}
-
-function finishSingleLink(firstLink, secondLink) {
-	log("Finishing Single Link from " + firstLink + " to " + secondLink + ".");
+function finishSingleLink(secondLink) {
+	log("Finishing 1-Way Link from " + firstLink + " to " + secondLink + ".");
 
 	warpDictionary[firstLink] = secondLink;
+	warpDictionary[secondLink] = deadEnd;
 
 	$("#" + firstLink).data("maphilight", hilightOneWay);
 	$("#" + secondLink).data("maphilight", hilightDeadEnd);
 
+	$("#" + firstLink).removeClass("unlinked");
+	$("#" + secondLink).removeClass("unlinked");
+
+	$("#" + firstLink).addClass("oneWay");
+	$("#" + secondLink).addClass("deadEnd");
+
+	$(".map").maphilight({alwaysOn:true});
 }
 
 function log(s) {
-	$("#hist")[0].value += s + "\n";
-    $('#hist').scrollTop($('#hist')[0].scrollHeight);
+	if($("#hist")[0]) {
+		$("#hist")[0].value += s + "\n";
+		$('#hist').scrollTop($('#hist')[0].scrollHeight);
+	}
+	else {
+		console.log(s);
+	}
 }
