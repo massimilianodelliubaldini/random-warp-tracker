@@ -166,9 +166,11 @@ function loadWorld(worldId) {
 }
 
 function showWorld(worldId) {
-	$(".world").removeClass("selectedWorld");
-	$("#" + worldId).addClass("selectedWorld");
-	$("#worlds").prepend($("#" + worldId));
+	if(worldId) {
+		$(".world").removeClass("selectedWorld");
+		$("#" + worldId).addClass("selectedWorld");
+		$("#worlds").prepend($("#" + worldId));
+	}
 }
 
 function showContextItems(itemKey, warpId) {
@@ -222,7 +224,6 @@ function cancelLink() {
 }
 
 function unlink(warpId) {
-
 	var dest = warpDictionary[warpId];
 	if(dest) {
 
