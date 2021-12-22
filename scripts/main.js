@@ -20,7 +20,7 @@ function main() {
 function setupWorlds() {
 
 	$(".world").each( function() {
-		loadWorld($(this)[0].id.replaceAll("world", ""));
+		loadWorld($(this)[0].id.replace("world", ""));
 	});
 }
 
@@ -85,6 +85,7 @@ function showWorld(worldId) {
 
 	$(".world").removeClass("selectedWorld");
 	$("#" + worldId).addClass("selectedWorld");
+	$("#worlds").prepend($("#" + worldId));
 }
 
 function getHilight(id) {
