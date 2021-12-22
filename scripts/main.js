@@ -4,20 +4,23 @@ var friendlyNames = {};
 
 function main() {
 
-	$(".navItem").click( function(e) {
-		e.preventDefault(); 
-		showWorld(e.target.id.replace("nav", "world"));
-		$(".navItem").removeClass("selectedItem");
-		$(this).addClass("selectedItem");
-		return false; 
-	});
-
 	var loads = [];
-	$(".world").each( function() {
-		loads.push(loadWorld($(this)[0].id));
+	loadWorlds().then( function() {
+		$(".world").each( function() {
+			loads.push(loadWorld($(this)[0].id));
+		});
 	});
 
 	Promise.all(loads).then( function() {
+
+		$(".navItem").click( function(e) {
+			e.preventDefault(); 
+			showWorld(e.target.id.replace("nav", "world"));
+			$(".navItem").removeClass("selectedItem");
+			$(this).addClass("selectedItem");
+			return false; 
+		});
+
 		$(".warp").click( function(e) {
 			e.preventDefault(); 
 			travelThru(e.target.id);
@@ -104,6 +107,39 @@ function main() {
 	});
 }
 
+function loadWorlds() {
+	return fetch(jsonPath + "worlds.json")
+		.then(response => response.json())
+		.then(data => {
+
+			for (var i = 0; i < data.worlds.length; i++) {
+
+				var world = data.worlds[i];
+				var worldId = "world" + world.worldName;
+
+				var nav = "<a class='navItem' href='javascript:void(0);'><span id='nav" + world.worldName + "'>" + world.navName + "</span></a>";
+				switch(world.navType) {
+					case "city":
+						$("#cities").after(nav);
+						break;
+					default:
+						$("#others").after(nav);
+						break;
+				}
+
+				var div = "<div id='" + worldId + "' class='hdiv world'></div>";
+				$("#worlds").append(div);
+				
+				var img = "<img id='" + worldId + "Image' src='' usemap='#map" + world.worldName + "' class='map'/>";
+				$("#" + worldId).append(img);
+
+				var map = "<map id='" + worldId + "Map' name='map" + world.worldName + "'></map>";
+				$("#" + worldId).append(map);
+			}
+		})
+		.catch(error => console.log(error));
+}
+
 function loadWorld(worldId) {
 	var worldName = worldId.replace("world", "");
 
@@ -111,16 +147,16 @@ function loadWorld(worldId) {
 		.then(response => response.json())
 		.then(data => {
 
-			$("#world" + worldName + "Image").attr("src", imagePath + data.imageName);
+			$("#" + worldId + "Image").attr("src", imagePath + data.imageName);
 			for (var i = 0; i < data.warps.length; i++) {
 
 				var warp = data.warps[i];
 				var warpId = worldId + splitter + warp.altName.toLowerCase().replaceAll(" ", "");
+
 				var area = "<area class='warp unlinked' shape='rect' coords='" + warp.coordString + "' id='" + warpId + "' alt='" + warp.altName + "'>";
-
-				$("#world" + worldName + "Map").append(area);
+				$("#" + worldId + "Map").append(area);
 				$("#" + warpId).data("maphilight", hilightUnlinked);
-
+				
 				friendlyNames[warpId] = worldName + " " + warp.altName;
 			}
 		})

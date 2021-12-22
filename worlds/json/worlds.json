@@ -1,0 +1,76 @@
+{
+	"game" : "Emerald",
+	"worlds": 
+	[
+		{
+			"worldName": "Dewford",
+			"navName": "Dewford Town",
+			"navType": "city"
+		},
+		{
+			"worldName": "Evergrande",
+			"navName": "Ever Grande City",
+			"navType": "city"
+		},
+		{
+			"worldName": "Fallarbor",
+			"navName": "Fallarbor Town",
+			"navType": "city"
+		},
+		{
+			"worldName": "Fortree",
+			"navName": "Fortree City",
+			"navType": "city"
+		},
+		{
+			"worldName": "Lavaridge",
+			"navName": "Lavaridge Town",
+			"navType": "city"
+		},
+		{
+			"worldName": "Lilycove",
+			"navName": "Lilycove City",
+			"navType": "city"
+		},
+		{
+			"worldName": "Mauville",
+			"navName": "Mauville City",
+			"navType": "city"
+		},
+		{
+			"worldName": "Mossdeep",
+			"navName": "Mossdeep City",
+			"navType": "city"
+		},
+		{
+			"worldName": "Oldale",
+			"navName": "Oldale Town",
+			"navType": "city"
+		},
+		{
+			"worldName": "Pacifidlog",
+			"navName": "Pacifidlog Town",
+			"navType": "city"
+		},
+		{
+			"worldName": "Petalburg",
+			"navName": "Petalburg City",
+			"navType": "city"
+		},
+		{
+			"worldName": "Rustboro",
+			"navName": "Rustboro City",
+			"navType": "city"
+		},
+		{
+			"worldName": "Slateport",
+			"navName": "Slateport City",
+			"navType": "city"
+		},
+		{
+			"worldName": "Sootopolis",
+			"navName": "Sootopolis City",
+			"navType": "city"		
+		}	
+	]
+}
