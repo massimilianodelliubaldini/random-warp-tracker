@@ -92,7 +92,7 @@ function getHilight(id) {
 	var dest = warpDictionary[id];
 	if(dest) {
 		if (dest == "deadend") {
-			return hillight
+			return hilightDeadEnd;
 		}
 		else {
 			var source = warpDictionary[dest];
