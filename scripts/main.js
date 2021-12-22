@@ -11,45 +11,45 @@ function main() {
 		return false; 
 	});
 
-	$(".world").each( function() {		
-		log("Loading " + $(this)[0].id + ".");
-		loadWorld($(this)[0].id).then( function() {
+	var loads = [];
+	$(".world").each( function() {
+		loads.push(loadWorld($(this)[0].id));
+	});
 
-			$(".warp").click( function(e) {
-				e.preventDefault(); 
-				travelThru(e.target.id);
-				return false; 
-			});
-
-			$(".warp").dblclick( function(e) {
-				e.preventDefault();
-				if(selectedWarp == "") {
-					startDoubleLink(e.target.id);
-					selectedWarp = e.target.id;
-				}
-				else {
-					finishDoubleLink(selectedWarp, e.target.id);
-					selectedWarp = "";
-				}
-				return false; 
-			});
-
-			$(".warp").contextmenu( function(e) {
-				e.preventDefault(); 
-				if(selectedWarp == "") {
-					startSingleLink(e.target.id);
-					selectedWarp = e.target.id;
-				}
-				else {
-					finishSingleLink(selectedWarp, e.target.id);
-					selectedWarp = "";
-				}
-				return false; 
-			});
-
-			$(".map").maphilight({alwaysOn:true});
-			log("Loaded " + $(this)[0].id + ".");
+	Promise.all(loads).then( function () {
+		$(".warp").click( function(e) {
+			e.preventDefault(); 
+			travelThru(e.target.id);
+			return false; 
 		});
+
+		$(".warp").dblclick( function(e) {
+			e.preventDefault();
+			if(selectedWarp == "") {
+				startDoubleLink(e.target.id);
+				selectedWarp = e.target.id;
+			}
+			else {
+				finishDoubleLink(selectedWarp, e.target.id);
+				selectedWarp = "";
+			}
+			return false; 
+		});
+
+		$(".warp").contextmenu( function(e) {
+			e.preventDefault(); 
+			if(selectedWarp == "") {
+				startSingleLink(e.target.id);
+				selectedWarp = e.target.id;
+			}
+			else {
+				finishSingleLink(selectedWarp, e.target.id);
+				selectedWarp = "";
+			}
+			return false; 
+		});
+
+		$(".map").maphilight({alwaysOn:true});
 	});
 }
 
