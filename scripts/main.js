@@ -11,20 +11,9 @@ function main() {
 		return false; 
 	});
 
-	setupWorlds();
-	setupWarps();
-
-	$(".map").maphilight({alwaysOn:true});
-}
-
-function setupWorlds() {
-
 	$(".world").each( function() {
 		loadWorld($(this)[0].id.replace("world", ""));
 	});
-}
-
-function setupWarps() {
 
 	$(".warp").click( function(e) {
 		e.preventDefault(); 
@@ -57,6 +46,8 @@ function setupWarps() {
 		}
 		return false; 
 	});
+
+	$(".map").maphilight({alwaysOn:true});
 }
 
 function loadWorld(worldName) {
