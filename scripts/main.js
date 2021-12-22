@@ -5,7 +5,7 @@ function main() {
 
 	$(".navItem").click( function(e) {
 		e.preventDefault(); 
-		showWorld(e.target.id.replaceAll("nav", ""));
+		showWorld(e.target.id.replace("nav", "world"));
 		$(".navItem").removeClass("selectedItem");
 		$(this).addClass("selectedItem");
 		return false; 
@@ -82,10 +82,10 @@ function loadWorld(worldName) {
 		.catch(error => console.log(error));
 }
 
-function showWorld(id) {
+function showWorld(worldId) {
 
 	$(".world").removeClass("selectedWorld");
-	$("#" + id).addClass("selectedWorld");
+	$("#" + worldId).addClass("selectedWorld");
 }
 
 function getHilight(id) {
