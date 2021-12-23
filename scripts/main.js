@@ -30,17 +30,28 @@ function main() {
 					return false; 
 				});
 
-				$(function(){
+				$( function () {
 					$.contextMenu({
-						selector: '.warp', 
+						selector: '.warp.twoWay', 
 						trigger: 'hover',
-						delay: 500,
-						autoHide: true,
-						items: {
-							hoverLink: {
-								name: "Goes To..."
-							}
-						}
+						build: function($triggerElement, e) {
+							var hoverDest = friendlyNames[warpDictionary[$triggerElement.id]];
+        					return {
+								animation: {
+									duration: 0, 
+									show: "slideDown", 
+									hide: "slideUp"
+								},
+								delay: 500,
+								autoHide: true,
+								items: {
+									hoverLink: {
+										name: hoverDest,
+										disabled: true
+									}
+								}
+							};
+						})
 					})
 				});
 
