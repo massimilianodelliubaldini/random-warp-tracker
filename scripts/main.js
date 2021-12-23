@@ -462,10 +462,10 @@ function markKeyLocation(key, warpId) {
 	$("#" + keyWarpId).data("maphilight", hilightKeyLocation);
 
 	$("#" + warpId).removeClass("unlinked");
-	$("#" + warpId).removeClass("unlinked");
+	$("#" + keyWarpId).removeClass("unlinked");
 	
 	$("#" + warpId).addClass("twoWay");
-	$("#" + warpId).addClass("twoWay");
+	$("#" + keyWarpId).addClass("twoWay");
 
 	$(".map").maphilight({alwaysOn:true});
 }
