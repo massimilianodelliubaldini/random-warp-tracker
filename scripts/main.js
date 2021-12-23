@@ -32,10 +32,10 @@ function main() {
 
 				$( function () {
 					$.contextMenu({
-						selector: '.warp.twoWay', 
-						trigger: 'hover',
+						selector: ".warp.twoWay .warp.OneWay .warp.keyLocation", 
+						trigger: "hover",
 						build: function($triggerElement, e) {
-							var hoverDest = friendlyNames[warpDictionary[$triggerElement.id]];
+							var hoverDest = friendlyNames[warpDictionary[$triggerElement[0].id]];
         					return {
 								animation: {
 									duration: 0, 
