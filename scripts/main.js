@@ -36,6 +36,7 @@ function main() {
 					$.contextMenu({
 						selector: ".warp.twoWay, .warp.oneWay, .warp.keyLocation", 
 						trigger: "hover",
+						delay: 500,
 						build: function($triggerElement, e) {
 							var hoverDest = friendlyNames[warpDictionary[$triggerElement[0].id]];
         					return {
@@ -44,7 +45,9 @@ function main() {
 									show: "slideDown", 
 									hide: "slideUp"
 								},
-								delay: 500,
+								position: function(opt, x, y){
+									opt.$menu.css({top: y + 10, left: x + 10});
+								},
 								autoHide: true,
 								items: {
 									hoverLink: {
