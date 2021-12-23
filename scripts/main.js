@@ -4,7 +4,7 @@ var friendlyNames = {};
 
 function main() {
 
-	friendlyNames = keyLocations;
+	friendlyNames = {...keyLocations};
 
 	var loads = [];
 	loadWorlds()
