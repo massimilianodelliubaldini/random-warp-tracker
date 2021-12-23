@@ -34,7 +34,7 @@ function main() {
 
 				$( function () {
 					$.contextMenu({
-						selector: ".warp.twoWay, .warp.OneWay, .warp.keyLocation", 
+						selector: ".warp.twoWay, .warp.oneWay, .warp.keyLocation", 
 						trigger: "hover",
 						build: function($triggerElement, e) {
 							var hoverDest = friendlyNames[warpDictionary[$triggerElement[0].id]];
