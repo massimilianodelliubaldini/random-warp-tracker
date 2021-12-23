@@ -120,7 +120,7 @@ function main() {
 									return showContextItems(key, $(this)[0].id);
 								},
 								items: {
-									gym_1: {
+									gym1: {
 										name: "Gym 1",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
@@ -129,7 +129,7 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									gym_2: {
+									gym2: {
 										name: "Gym 2",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
@@ -138,7 +138,7 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									gym_3: {
+									gym3: {
 										name: "Gym 3",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
@@ -147,7 +147,7 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									gym_4: {
+									gym4: {
 										name: "Gym 4",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
@@ -156,7 +156,7 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									gym_5: {
+									gym5: {
 										name: "Gym 5",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
@@ -165,7 +165,7 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									gym_6: {
+									gym6: {
 										name: "Gym 6",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
@@ -174,7 +174,7 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									gym_7: {
+									gym7: {
 										name: "Gym 7",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
@@ -183,7 +183,7 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									gym_8: {
+									gym8: {
 										name: "Gym 8",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
@@ -192,8 +192,8 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									e4_1: {
-										name: "Elite4 1",
+									elite41backdoor: {
+										name: "Elite4 1 Back Door",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
 										},
@@ -201,8 +201,8 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									e4_2: {
-										name: "Elite4 2",
+									elite42backdoor: {
+										name: "Elite4 2 Back Door",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
 										},
@@ -210,8 +210,8 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									e4_3: {
-										name: "Elite4 3",
+									elite43backdoor: {
+										name: "Elite4 3 Back Door",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
 										},
@@ -219,8 +219,44 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									e4_4: {
-										name: "Elite4 4",
+									elite44backdoor: {
+										name: "Elite4 4 Back Door",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return showContextIcons(itemKey);
+										},
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
+									elite41frontdoor: {
+										name: "Elite4 1 Front Door",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return showContextIcons(itemKey);
+										},
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
+									elite42frontdoor: {
+										name: "Elite4 2 Front Door",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return showContextIcons(itemKey);
+										},
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
+									elite43frontdoor: {
+										name: "Elite4 3 Front Door",
+										icon: function (opt, $itemElement, itemKey, item) {
+											return showContextIcons(itemKey);
+										},
+										callback: function(key, opt) { 
+											markKeyLocation(key, $(this)[0].id); 
+										}
+									},
+									elite44frontdoor: {
+										name: "Elite4 4 Front Door",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
 										},
@@ -354,9 +390,6 @@ function travelThru(warpId) {
 		if(dest == deadEnd) {
 			log(friendlyNames[warpId] + " is a dead end.");
 		}
-		else if(Object.keys(keyLocations).includes(dest)) {
-			log(friendlyNames[warpId] + " is a key location.");
-		}
 		else
 		{
 			log("Traveling through " + friendlyNames[warpId] + " to " + friendlyNames[dest] + ".");
@@ -421,11 +454,18 @@ function markDeadEnd(warpId) {
 function markKeyLocation(key, warpId) {
 	log("Marking " + friendlyNames[warpId] + " as " + friendlyNames[key] + ".");
 
-	warpDictionary[warpId] = key;
+	var keyWarpId = "worldKeyLocations" + splitter + key;
+	warpDictionary[warpId] = keyWarpId;
+	warpDictionary[keyWarpId] = warpId;
 
 	$("#" + warpId).data("maphilight", hilightKeyLocation);
+	$("#" + keyWarpId).data("maphilight", hilightKeyLocation);
+
 	$("#" + warpId).removeClass("unlinked");
-	$("#" + warpId).addClass("keyLocation");
+	$("#" + warpId).removeClass("unlinked");
+	
+	$("#" + warpId).addClass("twoWay");
+	$("#" + warpId).addClass("twoWay");
 
 	$(".map").maphilight({alwaysOn:true});
 }

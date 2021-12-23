@@ -39,17 +39,21 @@ var hilightKeyLocation = {
 };
 
 var keyLocations = {
-	"gym_1": "Gym 1",
-	"gym_2": "Gym 2",
-	"gym_3": "Gym 3",
-	"gym_4": "Gym 4",
-	"gym_5": "Gym 5",
-	"gym_6": "Gym 6",
-	"gym_7": "Gym 7",
-	"gym_8": "Gym 8",
-	"e4_1": "Elite4 1",
-	"e4_2": "Elite4 2",
-	"e4_3": "Elite4 3",
-	"e4_4": "Elite4 4",
+	"gym1": "Gym 1",
+	"gym2": "Gym 2",
+	"gym3": "Gym 3",
+	"gym4": "Gym 4",
+	"gym5": "Gym 5",
+	"gym6": "Gym 6",
+	"gym7": "Gym 7",
+	"gym8": "Gym 8",
+	"elite41backdoor": "Elite4 1 Back Door",
+	"elite42backdoor": "Elite4 2 Back Door",
+	"elite43backdoor": "Elite4 3 Back Door",
+	"elite44backdoor": "Elite4 4 Back Door",
+	"elite41frontdoor": "Elite4 1 Front Door",
+	"elite42frontdoor": "Elite4 2 Front Door",
+	"elite43frontdoor": "Elite4 3 Front Door",
+	"elite44frontdoor": "Elite4 4 Front Door",
 	"champion": "Champion"
 };
