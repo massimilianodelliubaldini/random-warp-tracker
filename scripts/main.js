@@ -4,6 +4,8 @@ var friendlyNames = {};
 
 function main() {
 
+	friendlyNames = keyLocations;
+
 	var loads = [];
 	loadWorlds()
 		.then( function() {
@@ -414,7 +416,7 @@ function markDeadEnd(warpId) {
 }
 
 function markKeyLocation(key, warpId) {
-	log("Marking " + friendlyNames[warpId] + " as " + keyLocations[key] + ".");
+	log("Marking " + friendlyNames[warpId] + " as " + friendlyNames[key] + ".");
 
 	warpDictionary[warpId] = key;
 
