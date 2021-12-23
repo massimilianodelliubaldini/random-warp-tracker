@@ -3,6 +3,16 @@
 	"worlds": 
 	[
 		{
+			"worldName": "KeyLocations",
+			"navName": "All Key Locations",
+			"navType": "key"
+		},
+		{
+			"worldName": "PokeCenters",
+			"navName": "All PokeCenters",
+			"navType": "key"
+		},
+		{
 			"worldName": "DeptStore",
 			"navName": "The Department Store",
 			"navType": "key"

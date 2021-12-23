@@ -1,0 +1,134 @@
+{
+	"imageName": "Pokemon_Centers_All_RSE.png",
+	"warps": 
+	[
+		{
+			"altName": "Dewford Stairs",
+			"coordString": "360,167,423,208"
+		},
+		{
+			"altName": "Dewford Front Door",
+			"coordString": "232,176,295,207"
+		},
+		{
+			"altName": "Ever Grande Stairs",
+			"coordString": "360,228,423,269"
+		},
+		{
+			"altName": "Ever Grande Front Door",
+			"coordString": "232,237,295,268"
+		},
+		{
+			"altName": "Fallarbor Stairs",
+			"coordString": "360,289,423,330"
+		},
+		{
+			"altName": "Fallarbor Front Door",
+			"coordString": "232,298,295,329"
+		},
+		{
+			"altName": "Fortree Stairs",
+			"coordString": "360,350,423,391"
+		},
+		{
+			"altName": "Fortree Front Door",
+			"coordString": "232,359,295,390"
+		},
+		{
+			"altName": "Lavaridge Stairs",
+			"coordString": "360,411,423,452"
+		},
+		{
+			"altName": "Lavaridge Front Door",
+			"coordString": "232,420,295,451"
+		},
+		{
+			"altName": "Lavaridge Back Door",
+			"coordString": "488,417,559,451"
+		},
+		{
+			"altName": "Lilycove Stairs",
+			"coordString": "360,472,423,513"
+		},
+		{
+			"altName": "Lilycove Front Door",
+			"coordString": "232,481,295,512"
+		},
+		{
+			"altName": "Mauville Stairs",
+			"coordString": "360,533,423,574"
+		},
+		{
+			"altName": "Mauville Front Door",
+			"coordString": "232,542,295,573"
+		},
+		{
+			"altName": "Mossdeep Stairs",
+			"coordString": "360,594,423,635"
+		},
+		{
+			"altName": "Mossdeep Front Door",
+			"coordString": "232,603,295,634"
+		},
+		{
+			"altName": "Oldale Stairs",
+			"coordString": "360,655,423,696"
+		},
+		{
+			"altName": "Oldale Front Door",
+			"coordString": "232,664,295,695"
+		},
+		{
+			"altName": "Pacifidlog Stairs",
+			"coordString": "360,716,423,757"
+		},
+		{
+			"altName": "Pacifidlog Front Door",
+			"coordString": "232,725,295,756"
+		},
+		{
+			"altName": "Petalburg Stairs",
+			"coordString": "360,777,423,818"
+		},
+		{
+			"altName": "Petalburg Front Door",
+			"coordString": "232,786,295,817"
+		},
+		{
+			"altName": "League Stairs",
+			"coordString": "360,838,423,879"
+		},
+		{
+			"altName": "League Front Door",
+			"coordString": "232,847,295,878"
+		},
+		{
+			"altName": "League Back Door",
+			"coordString": "488,844,557,878"
+		},
+		{
+			"altName": "Rustboro Stairs",
+			"coordString": "360,899,423,940"
+		},
+		{
+			"altName": "Rustboro Front Door",
+			"coordString": "232,908,295,939"
+		},
+		{
+			"altName": "Slateport Stairs",
+			"coordString": "360,960,423,1001"
+		},
+		{
+			"altName": "Slateport Front Door",
+			"coordString": "232,969,295,1000"
+		},
+		{
+			"altName": "Sootopolis Stairs",
+			"coordString": "360,1021,423,1062"
+		},
+		{
+			"altName": "Sootopolis Front Door",
+			"coordString": "232,1030,295,1061"
+		}
+	]
+}

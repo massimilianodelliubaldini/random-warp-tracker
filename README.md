@@ -46,5 +46,6 @@ I wrote this site to practice web development. My goals for this project:
 	* Serves as the inspiration for this project. I also rely on the concepts and definitions set therein. 
 * PointCrow, XLuma, Turtleisaac, AtSign, et al. - Warp Randomizer mod
 * Bulbapedia - World images
+* Nintendofreak106 - [Lavaridge Center interior](https://www.spriters-resource.com/fullview/38099/)
 * David Lynch - [maphilight](https://davidlynch.org/blog/2008/03/maphilight-image-map-mouseover-highlighting/)
 * SWIS - [jQuery-contextMenu](https://github.com/swisnl/jQuery-contextMenu)

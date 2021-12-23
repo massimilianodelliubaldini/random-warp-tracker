@@ -1,0 +1,74 @@
+{
+	"imageName": "Key_Locations_All_E.png",
+	"warps": 
+	[
+		{
+			"altName":"Gym 1",
+			"coordString": "0,0,79,63"
+		},
+		{
+			"altName":"Gym 2",
+			"coordString": "80,0,159,63"
+		},
+		{
+			"altName":"Gym 3",
+			"coordString": "160,0,239,63"
+		},
+		{
+			"altName":"Gym 4",
+			"coordString": "240,0,319,63"
+		},
+		{
+			"altName":"Gym 5",
+			"coordString": "320,0,399,63"
+		},
+		{
+			"altName":"Gym 6",
+			"coordString": "400,0,479,63"
+		},
+		{
+			"altName":"Gym 7",
+			"coordString": "480,0,559,63"
+		},
+		{
+			"altName":"Gym 8",
+			"coordString": "560,0,639,63"
+		},
+		{
+			"altName":"Elite4 1 Back Door",
+			"coordString": "80,64,127,111"
+		},
+		{
+			"altName":"Elite4 2 Back Door",
+			"coordString": "288,64,335,111"
+		},
+		{
+			"altName":"Elite4 3 Back Door",
+			"coordString": "496,64,543,111"
+		},
+		{
+			"altName":"Elite4 4 Back Door",
+			"coordString": "704,64,751,111"
+		},
+		{
+			"altName":"Elite4 1 Front Door",
+			"coordString": "80,240,127,287"
+		},
+		{
+			"altName":"Elite4 2 Front Door",
+			"coordString": "288,240,335,287"
+		},
+		{
+			"altName":"Elite4 3 Front Door",
+			"coordString": "496,240,543,287"
+		},
+		{
+			"altName":"Elite4 4 Front Door",
+			"coordString": "704,240,751,287"
+		},
+		{
+			"altName":"Champion",
+			"coordString": "912,224,959,271"
+		}
+	]
+}
