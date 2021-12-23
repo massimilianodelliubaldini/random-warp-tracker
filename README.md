@@ -40,7 +40,12 @@ I wrote this site to practice web development. My goals for this project:
 	* maphilight
 	* contextMenu
 
-## Acknowledgements
+## Acknowledgments
+
+* /u/twiddlebit - [Warp Randomizer Tracker](https://old.reddit.com/r/pokemon/comments/qizqd7/i_made_a_tracking_spreadsheet_for_the_pokemon/)
+	* Serves as the inspiration for this project. I also rely on the concepts and definitions set therein. 
+* PointCrow, XLuma. Turtleisaac, AtSign - Warp Randomizer mod
+* Bulbapedia - World images
 
 * David Lynch - [maphilight](https://davidlynch.org/blog/2008/03/maphilight-image-map-mouseover-highlighting/)
 * SWIS et. al. - [jQuery-contextMenu](https://github.com/swisnl/jQuery-contextMenu)
