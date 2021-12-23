@@ -16,9 +16,11 @@ function main() {
 
 				$(".navItem").click( function(e) {
 					e.preventDefault(); 
-					showWorld(e.target.id.replace("nav", "world"));
-					$(".navItem").removeClass("selectedItem");
-					$(this).addClass("selectedItem");
+					var travelled = showWorld(e.target.id.replace("nav", "world"));
+					if(travelled) {
+						$(".navItem").removeClass("selectedItem");
+						$(this).addClass("selectedItem");
+					}
 					return false; 
 				});
 
@@ -26,6 +28,20 @@ function main() {
 					e.preventDefault(); 
 					travelThru(e.target.id);
 					return false; 
+				});
+
+				$(function(){
+					$.contextMenu({
+						selector: '.warp', 
+						trigger: 'hover',
+						delay: 500,
+						autoHide: true,
+						items: {
+							hoverLink: {
+								name: "Goes To..."
+							}
+						}
+					})
 				});
 
 				$( function () {
@@ -91,7 +107,7 @@ function main() {
 									gym_1: {
 										name: "Gym 1",
 										icon: function (opt, $itemElement, itemKey, item) {
-											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+											return showContextIcons(itemKey);
 										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
@@ -100,7 +116,7 @@ function main() {
 									gym_2: {
 										name: "Gym 2",
 										icon: function (opt, $itemElement, itemKey, item) {
-											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+											return showContextIcons(itemKey);
 										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
@@ -109,7 +125,7 @@ function main() {
 									gym_3: {
 										name: "Gym 3",
 										icon: function (opt, $itemElement, itemKey, item) {
-											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+											return showContextIcons(itemKey);
 										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
@@ -118,7 +134,7 @@ function main() {
 									gym_4: {
 										name: "Gym 4",
 										icon: function (opt, $itemElement, itemKey, item) {
-											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+											return showContextIcons(itemKey);
 										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
@@ -127,7 +143,7 @@ function main() {
 									gym_5: {
 										name: "Gym 5",
 										icon: function (opt, $itemElement, itemKey, item) {
-											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+											return showContextIcons(itemKey);
 										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
@@ -136,7 +152,7 @@ function main() {
 									gym_6: {
 										name: "Gym 6",
 										icon: function (opt, $itemElement, itemKey, item) {
-											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+											return showContextIcons(itemKey);
 										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
@@ -145,7 +161,7 @@ function main() {
 									gym_7: {
 										name: "Gym 7",
 										icon: function (opt, $itemElement, itemKey, item) {
-											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+											return showContextIcons(itemKey);
 										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
@@ -154,7 +170,7 @@ function main() {
 									gym_8: {
 										name: "Gym 8",
 										icon: function (opt, $itemElement, itemKey, item) {
-											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+											return showContextIcons(itemKey);
 										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
@@ -163,7 +179,7 @@ function main() {
 									e4_1: {
 										name: "Elite4 1",
 										icon: function (opt, $itemElement, itemKey, item) {
-											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+											return showContextIcons(itemKey);
 										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
@@ -172,7 +188,7 @@ function main() {
 									e4_2: {
 										name: "Elite4 2",
 										icon: function (opt, $itemElement, itemKey, item) {
-											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+											return showContextIcons(itemKey);
 										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
@@ -181,7 +197,7 @@ function main() {
 									e4_3: {
 										name: "Elite4 3",
 										icon: function (opt, $itemElement, itemKey, item) {
-											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+											return showContextIcons(itemKey);
 										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
@@ -190,7 +206,7 @@ function main() {
 									e4_4: {
 										name: "Elite4 4",
 										icon: function (opt, $itemElement, itemKey, item) {
-											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+											return showContextIcons(itemKey);
 										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
@@ -199,7 +215,7 @@ function main() {
 									champion: {
 										name: "Champion",
 										icon: function (opt, $itemElement, itemKey, item) {
-											return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+											return showContextIcons(itemKey);
 										},
 										callback: function(key, opt) { 
 											markKeyLocation(key, $(this)[0].id); 
@@ -289,7 +305,9 @@ function showWorld(worldId) {
 		$(".world").removeClass("selectedWorld");
 		$("#" + worldId).addClass("selectedWorld");
 		$("#worlds").prepend($("#" + worldId));
+		return true;
 	}
+	return false;
 }
 
 function showContextItems(itemKey, warpId) {
@@ -309,6 +327,9 @@ function showContextItems(itemKey, warpId) {
 		default:
 			return false;
 	}
+}
+function showContextIcons(itemKey) {
+	return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
 }
 
 function travelThru(warpId) {
