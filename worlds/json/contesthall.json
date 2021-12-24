@@ -1,0 +1,18 @@
+{
+	"imageName": "Contest_Hall_Lilycove_Entrance_E.png",
+	"warps": 
+	[
+		{
+			"altName": "Front Door",
+			"coordString": "224,160,255,191"
+		},
+		{
+			"altName": "Left Room",
+			"coordString": "136,0,167,31"
+		},
+		{
+			"altName": "Right Room",
+			"coordString": "328,0,359,31"
+		}
+	]
+}

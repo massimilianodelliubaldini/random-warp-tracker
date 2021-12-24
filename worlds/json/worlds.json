@@ -86,6 +86,21 @@
 			"worldName": "Sootopolis",
 			"navName": "Sootopolis City",
 			"navType": "city"		
+		},
+		{
+			"worldName": "AbandonedShip",
+			"navName": "Abandoned Ship",
+			"navType": "other"		
+		},
+		{
+			"worldName": "AquaHideout",
+			"navName": "Aqua Hideout",
+			"navType": "other"		
+		},
+		{
+			"worldName": "ContestHall",
+			"navName": "Contest Hall",
+			"navType": "other"		
 		}	
 	]
 }

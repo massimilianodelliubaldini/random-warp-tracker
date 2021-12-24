@@ -1,0 +1,90 @@
+{
+	"imageName": "Abandoned_Ship_RSE.png",
+	"warps": 
+	[
+		{
+			"altName": "Hallway 1 Stairs",
+			"coordString": "104,24,135,55"
+		},
+		{
+			"altName": "Hallway 1 Front Door",
+			"coordString": "24,168,55,199"
+		},
+		{
+			"altName": "Hallway 1 Room 1",
+			"coordString": "64,56,95,87"
+		},
+		{
+			"altName": "Hallway 1 Room 2",
+			"coordString": "64,136,95,167"
+		},
+		{
+			"altName": "Hallway 2 Stairs",
+			"coordString": "280,24,311,55"
+		},
+		{
+			"altName": "Hallway 2 Front Door",
+			"coordString": "152,168,183,199"
+		},
+		{
+			"altName": "Hallway 2 Room 1",
+			"coordString": "192,56,223,87"
+		},
+		{
+			"altName": "Hallway 2 Room 2",
+			"coordString": "240,56,271,87"
+		},
+		{
+			"altName": "Hallway 2 Room 3",
+			"coordString": "192,136,223,167"
+		},
+		{
+			"altName": "Hallway 2 Room 4",
+			"coordString": "240,136,271,167"
+		},
+		{
+			"altName": "Hallway 3 Stairs 1",
+			"coordString": "24,232,55,263"
+		},
+		{
+			"altName": "Hallway 3 Stairs 2",
+			"coordString": "152,232,183,263"
+		},
+		{
+			"altName": "Hallway 3 Room 1",
+			"coordString": "64,264,95,295"
+		},
+		{
+			"altName": "Hallway 3 Room 2",
+			"coordString": "112,264,143,295"
+		},
+		{
+			"altName": "Hallway 3 Room 3",
+			"coordString": "192,264,223,295"
+		},
+		{
+			"altName": "Hallway 3 Room 4",
+			"coordString": "96,328,127,359"
+		},
+		{
+			"altName": "Hallway 3 Room 5",
+			"coordString": "144,328,175,359"
+		},
+		{
+			"altName": "Hallway 3 Room 6",
+			"coordString": "192,328,223,359"
+		},
+		{
+			"altName": "Cabin 1",
+			"coordString": "298,248,329,279"
+		},
+		{
+			"altName": "Cabin 2",
+			"coordString": "162,488,193,519"
+		},
+		{
+			"altName": "Cabin 3",
+			"coordString": "306,488,337,519"
+		}
+	]
+}

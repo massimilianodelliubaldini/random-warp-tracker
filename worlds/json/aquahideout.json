@@ -1,0 +1,94 @@
+{
+	"imageName": "Aqua_Hideout_SE.png",
+	"warps": 
+	[
+		{
+			"altName": "Northeast Room Stairs",
+			"coordString": ""
+		},
+		{
+			"altName": "Northeast Room Left Warp",
+			"coordString": ""
+		},
+		{
+			"altName": "Northeast Room Right Warp",
+			"coordString": ""
+		},
+		{
+			"altName": "Sub Balcony Top Left Warp",
+			"coordString": ""
+		},
+		{
+			"altName": "Sub Balcony Bottom Left Warp",
+			"coordString": ""
+		},
+		{
+			"altName": "Sub Balcony Right Warp",
+			"coordString": ""
+		},
+		{
+			"altName": "Engine Room Stairs",
+			"coordString": ""
+		},
+		{
+			"altName": "Engine Room Left Warp",
+			"coordString": ""
+		},
+		{
+			"altName": "Engine Room Right Warp",
+			"coordString": ""
+		},
+		{
+			"altName": "Warp Hall 1",
+			"coordString": ""
+		},
+		{
+			"altName": "Warp Hall 2",
+			"coordString": ""
+		},
+		{
+			"altName": "Warp Hall 3",
+			"coordString": ""
+		},
+		{
+			"altName": "Warp Hall 4",
+			"coordString": ""
+		},
+		{
+			"altName": "Warp Hall 5",
+			"coordString": ""
+		},
+		{
+			"altName": "Warp Hall 6",
+			"coordString": ""
+		},
+		{
+			"altName": "Warp Hall 7",
+			"coordString": ""
+		},
+		{
+			"altName": "Warp Hall 8",
+			"coordString": ""
+		},
+		{
+			"altName": "Warp Hall 9",
+			"coordString": ""
+		},
+		{
+			"altName": "Warp Hall ",
+			"coordString": ""
+		},
+		{
+			"altName": "Warp Hall ",
+			"coordString": ""
+		},
+		{
+			"altName": "Warp Hall ",
+			"coordString": ""
+		},
+		{
+			"altName": "Warp Hall ",
+			"coordString": ""
+		}
+	]
+}
