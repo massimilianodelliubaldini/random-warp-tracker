@@ -1,0 +1,18 @@
+{
+	"imageName": "Magma_Hideout_1F_E.png",
+	"warps": 
+	[
+		{
+			"altName": "Cave",
+			"coordString": "304,320,351,367"
+		},
+		{
+			"altName": "Left Entrance",
+			"coordString": "146,544,193,591"
+		},
+		{
+			"altName": "Right Entrance",
+			"coordString": "386,544,433,591"
+		}
+	]
+}

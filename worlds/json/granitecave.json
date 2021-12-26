@@ -1,0 +1,42 @@
+{
+	"imageName": "Granite_Cave_E.png",
+	"warps": 
+	[
+		{
+			"altName": "1F Upper Entrance",
+			"coordString": "64,160,111,207"
+		},
+		{
+			"altName": "1F Lower Entrance",
+			"coordString": "576,192,623,239"
+		},
+		{
+			"altName": "1F Upper Ladder",
+			"coordString": "544,32,591,79"
+		},
+		{
+			"altName": "1F Lower Ladder",
+			"coordString": "256,160,303,207"
+		},
+		{
+			"altName": "B1F Upper Ladder 1",
+			"coordString": "112,320,159,367"
+		},
+		{
+			"altName": "B1F Upper Ladder 2",
+			"coordString": "176,288,223,335"
+		},
+		{
+			"altName": "B1F Upper Ladder 3",
+			"coordString": "448,272,495,319"
+		},
+		{
+			"altName": "B1F Lower Ladder 1",
+			"coordString": "48,576,95,623"
+		},
+		{
+			"altName": "B1F Lower Ladder 2",
+			"coordString": "432,576,479,623"
+		},
+	]
+}

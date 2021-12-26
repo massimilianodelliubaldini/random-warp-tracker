@@ -101,6 +101,21 @@
 			"worldName": "ContestHall",
 			"navName": "Contest Hall",
 			"navType": "other"		
-		}	
+		},
+		{
+			"worldName": "GraniteCave",
+			"navName": "Granite Cave",
+			"navType": "other"		
+		},
+		{
+			"worldName": "JaggedPass",
+			"navName": "Jagged Pass",
+			"navType": "other"		
+		},
+		{
+			"worldName": "MagmaHideout",
+			"navName": "Magma Hideout",
+			"navType": "other"		
+		},	
 	]
 }

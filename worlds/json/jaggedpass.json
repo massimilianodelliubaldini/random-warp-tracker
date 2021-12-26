@@ -1,0 +1,18 @@
+{
+	"imageName": "Jagged_Pass_E.png",
+	"warps": 
+	[
+		{
+			"altName": "Base",
+			"coordString": "224,640,255,671"
+		},
+		{
+			"altName": "Summit",
+			"coordString": "208,64,239,95"
+		},
+		{
+			"altName": "Cave",
+			"coordString": "240,256,287,303"
+		}
+	]
+}

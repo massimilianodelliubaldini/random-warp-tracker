@@ -4,91 +4,91 @@
 	[
 		{
 			"altName": "Northeast Room Stairs",
-			"coordString": ""
+			"coordString": "448,0,495,47"
 		},
 		{
 			"altName": "Northeast Room Left Warp",
-			"coordString": ""
+			"coordString": "416,48,463,95"
 		},
 		{
 			"altName": "Northeast Room Right Warp",
-			"coordString": ""
+			"coordString": "480,48,527,95"
 		},
 		{
 			"altName": "Sub Balcony Top Left Warp",
-			"coordString": ""
+			"coordString": "32,224,79,271"
 		},
 		{
 			"altName": "Sub Balcony Bottom Left Warp",
-			"coordString": ""
+			"coordString": "32,304,79,351"
 		},
 		{
 			"altName": "Sub Balcony Right Warp",
-			"coordString": ""
+			"coordString": "496,288,543,335"
 		},
 		{
 			"altName": "Engine Room Stairs",
-			"coordString": ""
+			"coordString": "272,400,319,447"
 		},
 		{
 			"altName": "Engine Room Left Warp",
-			"coordString": ""
+			"coordString": "272,592,319,639"
 		},
 		{
 			"altName": "Engine Room Right Warp",
-			"coordString": ""
+			"coordString": "480,512,527,559"
 		},
 		{
 			"altName": "Warp Hall 1",
-			"coordString": ""
+			"coordString": "624,16,671,63"
 		},
 		{
 			"altName": "Warp Hall 2",
-			"coordString": ""
+			"coordString": "576,64,623,111"
 		},
 		{
 			"altName": "Warp Hall 3",
-			"coordString": ""
+			"coordString": "624,64,671,111"
 		},
 		{
 			"altName": "Warp Hall 4",
-			"coordString": ""
+			"coordString": "672,64,719,111"
 		},
 		{
 			"altName": "Warp Hall 5",
-			"coordString": ""
+			"coordString": "576,128,623,175"
 		},
 		{
 			"altName": "Warp Hall 6",
-			"coordString": ""
+			"coordString": "624,128,671,175"
 		},
 		{
 			"altName": "Warp Hall 7",
-			"coordString": ""
+			"coordString": "672,128,719,175"
 		},
 		{
 			"altName": "Warp Hall 8",
-			"coordString": ""
+			"coordString": "576,192,623,239"
 		},
 		{
 			"altName": "Warp Hall 9",
-			"coordString": ""
+			"coordString": "624,192,671,239"
 		},
 		{
-			"altName": "Warp Hall ",
-			"coordString": ""
+			"altName": "Warp Hall 10",
+			"coordString": "672,192,719,239"
 		},
 		{
-			"altName": "Warp Hall ",
-			"coordString": ""
+			"altName": "Warp Hall 11",
+			"coordString": "576,256,623,303"
 		},
 		{
-			"altName": "Warp Hall ",
-			"coordString": ""
+			"altName": "Warp Hall 12",
+			"coordString": "624,256,671,303"
 		},
 		{
-			"altName": "Warp Hall ",
-			"coordString": ""
+			"altName": "Warp Hall 13",
+			"coordString": "672,256,719,303"
 		}
 	]
 }
