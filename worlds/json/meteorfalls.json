@@ -1,0 +1,58 @@
+{
+	"imageName": "Meteor_Falls_E.png",
+	"warps": 
+	[
+		{
+			"altName": "1F Bottom Entrance",
+			"coordString": "80,624,127,671"
+		},
+		{
+			"altName": "1F Right Entrance",
+			"coordString": "416,288,463,335"
+		},
+		{
+			"altName": "1F Waterfall Cave",
+			"coordString": "144,16,191,63"
+		},
+		{
+			"altName": "B1F Stairs 1",
+			"coordString": "544,208,591,255"
+		},
+		{
+			"altName": "B1F Stairs 2",
+			"coordString": "592,304,639,351"
+		},
+		{
+			"altName": "B1F Stairs 3",
+			"coordString": "816,352,863,399"
+		},
+		{
+			"altName": "B1F Entrance",
+			"coordString": "640,464,687,511"
+		},
+		{
+			"altName": "B2F Stairs 1",
+			"coordString": "1056,80,1103,127"
+		},
+		{
+			"altName": "B2F Stairs 2",
+			"coordString": "1088,160,1135,207"
+		},
+		{
+			"altName": "B2F Stairs 3",
+			"coordString": "1264,224,1311,271"
+		},
+		{
+			"altName": "B2F Stairs 4",
+			"coordString": "1024,352,1071,399"
+		},
+		{
+			"altName": "B2F Cave",
+			"coordString": "1248,16,1295,63"
+		},
+		{
+			"altName": "B2F Entrance",
+			"coordString": "1296,576,1343,623"
+		}
+	]
+}

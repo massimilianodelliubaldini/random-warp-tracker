@@ -1,0 +1,18 @@
+{
+	"imageName": "Rusturf_Tunnel_E.png",
+	"warps": 
+	[
+		{
+			"altName": "Left Entrance",
+			"coordString": "48,160,95,207"
+		},
+		{
+			"altName": "Right Entrance",
+			"coordString": "448,256,495,303"
+		},
+		{
+			"altName": "Bottom Entrance",
+			"coordString": "272,320,319,367"
+		}
+	]
+}

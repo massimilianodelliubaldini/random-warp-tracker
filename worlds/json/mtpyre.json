@@ -1,0 +1,78 @@
+{
+	"imageName": "Mt_Pyre_E.png",
+	"warps": 
+	[
+		{
+			"altName": "Room 1 Stairs",
+			"coordString": "120,0,151,31"
+		},
+		{
+			"altName": "Room 1 Left Entrance",
+			"coordString": "0,80,31,111"
+		},
+		{
+			"altName": "Room 1 Bottom Entrance",
+			"coordString": "224,272,255,303"
+		},
+		{
+			"altName": "Room 2 Left Stairs",
+			"coordString": "344,0,375,31"
+		},
+		{
+			"altName": "Room 2 Right Stairs",
+			"coordString": "472,0,503,31"
+		},
+		{
+			"altName": "Room 2 Hole",
+			"coordString": "488,136,519,167"
+		},
+		{
+			"altName": "Room 3 Left Stairs",
+			"coordString": "568,0,599,31"
+		},
+		{
+			"altName": "Room 3 Right Stairs",
+			"coordString": "696,0,727,31"
+		},
+		{
+			"altName": "Room 3 Left Hole",
+			"coordString": "632,184,663,215"
+		},
+		{
+			"altName": "Room 3 Right Hole",
+			"coordString": "696,184,727,215"
+		},
+		{
+			"altName": "Room 4 Left Stairs",
+			"coordString": "120,384,151,415"
+		},
+		{
+			"altName": "Room 4 Right Stairs",
+			"coordString": "248,320,279,351"
+		},
+		{
+			"altName": "Room 4 Left Hole",
+			"coordString": "120,496,151,527"
+		},
+		{
+			"altName": "Room 4 Right Hole",
+			"coordString": "232,472,263,503"
+		},
+		{
+			"altName": "Room 5 Left Stairs",
+			"coordString": "344,320,375,351"
+		},
+		{
+			"altName": "Room 5 Right Stairs",
+			"coordString": "472,384,503,415"
+		},
+		{
+			"altName": "Room 5 Top Hole",
+			"coordString": "496,464,527,495"
+		},
+		{
+			"altName": "Room 5 Bottom Hole",
+			"coordString": "496,496,527,527"
+		}
+	]
+}

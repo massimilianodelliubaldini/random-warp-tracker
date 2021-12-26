@@ -85,37 +85,57 @@
 		{
 			"worldName": "Sootopolis",
 			"navName": "Sootopolis City",
-			"navType": "city"		
+			"navType": "city"
 		},
 		{
 			"worldName": "AbandonedShip",
 			"navName": "Abandoned Ship",
-			"navType": "other"		
+			"navType": "other"
 		},
 		{
 			"worldName": "AquaHideout",
 			"navName": "Aqua Hideout",
-			"navType": "other"		
+			"navType": "other"
 		},
 		{
 			"worldName": "ContestHall",
 			"navName": "Contest Hall",
-			"navType": "other"		
+			"navType": "other"
 		},
 		{
 			"worldName": "GraniteCave",
 			"navName": "Granite Cave",
-			"navType": "other"		
+			"navType": "other"
 		},
 		{
 			"worldName": "JaggedPass",
 			"navName": "Jagged Pass",
-			"navType": "other"		
+			"navType": "other"
 		},
 		{
 			"worldName": "MagmaHideout",
 			"navName": "Magma Hideout",
-			"navType": "other"		
+			"navType": "other"
+		},
+		{
+			"worldName": "MeteorFalls",
+			"navName": "Meteor Falls",
+			"navType": "other"
+		},
+		{
+			"worldName": "MtPyre",
+			"navName": "Mt Pyre",
+			"navType": "other"
+		},
+		{
+			"worldName": "PetalburgWoods",
+			"navName": "Petalburg Woods",
+			"navType": "other"
+		},
+		{
+			"worldName": "RusturfTunnel",
+			"navName": "Rusturf Tunnel",
+			"navType": "other"
 		}
 	]
 }

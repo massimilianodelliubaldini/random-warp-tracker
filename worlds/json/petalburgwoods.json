@@ -1,0 +1,18 @@
+{
+	"imageName": "Petalburg_Woods_E.png",
+	"warps": 
+	[
+		{
+			"altName": "Top Entrance",
+			"coordString": "224,64,255,95"
+		},
+		{
+			"altName": "Bottom Left Entrance",
+			"coordString": "256,608,287,639"
+		},
+		{
+			"altName": "Bottom Right Entrance",
+			"coordString": "576,608,607,639"
+		}
+	]
+}
