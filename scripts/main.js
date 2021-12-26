@@ -316,7 +316,7 @@ function loadWorlds() {
 						break;
 				}
 
-				var div = "<div id='" + worldId + "' class='hdiv world'></div>";
+				var div = "<div id='" + worldId + "' class='vdiv world'></div>";
 				$("#worlds").append(div);
 				
 				var img = "<img id='" + worldId + "Image' src='' usemap='#map" + world.worldName + "' class='map'/>";
