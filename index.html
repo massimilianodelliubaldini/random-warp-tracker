@@ -6,28 +6,33 @@
 		<title>Randomized Warp Tracker</title>	
 	</head>
 	<body onload="main()">
-		<h1>Randomized Warp Tracker</h1>
+		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
 		<script src="./scripts/contextmenu/jquery.contextMenu.min.js" type="text/javascript"></script>
 		<script src="./scripts/contextmenu/jquery.ui.position.min.js" type="text/javascript"></script>
 		<script src="./scripts/maphilight/jquery.maphilight.min.js" type="text/javascript"></script>
 		<script src="./scripts/constants.js" type="text/javascript"></script>
 		<script src="./scripts/main.js" type="text/javascript"></script>
-		<div class="vdiv">
-			<a href="./howto.html">How To Use</a>
-		</div>
-		<div class="vdiv">
+		<div class="topBar">
+			<h1>Randomized Warp Tracker</h1>
+			<a href="./howto.html">How To Use</a> | <a href="https://github.com/mpm11011/random-warp-tracker">GitHub</a>
 			<h2>Tracking History</h2>
 			<textarea id="hist" rows="5" cols="100" style="font-family:monospace;"></textarea>
 		</div>
-		<div class="vdiv">
-			<div id="navs" class="hdiv">
+		<div>
+			<div id="navs" class="leftBar">
 				<h2>Main Navigation</h2>
-				<h4 id="keys">Key Locations</h4>
-				<h4 id="cities">Towns and Cities</h4>
-				<h4 id="others">Other Branching Locations</h4>
+				<h4>Key Locations</h4>
+				<ul id="keys">
+				</ul>
+				<h4>Towns and Cities</h4>
+				<ul id="cities">
+				</ul>
+				<h4>Other Branching Locations</h4>
+				<ul id="others">
+				</ul>
 			</div>
-			<div id="worlds" class="hdiv">
+			<div id="worlds" class="mainContent">
 			</div>
 		</div>
 	</body>

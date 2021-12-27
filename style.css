@@ -2,22 +2,64 @@
 	font-family: "Arial";
 }
 
-.hdiv {
+body {
+	margin: 0;
+}
+
+.mainContent {
 	vertical-align: top;
 	display: inline-block;
 }
 
-.vdiv {
+.topBar {
 	display: block;
+	background-color: 242832;
+	color: ffffff;
+	padding: 8;
+}
+
+.topBar a:link {
+	color: ffffff;
+}
+
+.topBar a:visited {
+	color: aaaaaa;
+}
+
+.leftBar {
+	vertical-align: top;
+	display: inline-block;
+	background-color: d0d4d8;
+	color: 242832;
+	padding: 0;
+}
+
+.leftBar h2, h4 {
+	padding-left: 8;
+	padding-right: 8;
+}
+
+.leftBar ul {
+	padding: 0;
+	list-style-type: none;
+}
+
+.leftBar a:link, a:visited {
+	display: block;
+	padding-top: 2;
+	padding-bottom: 2;
+	line-height: 1.4;
+	color: 242832;
+	padding-left: 24;
+	text-decoration: none;
 }
 
 .navItem {
-	display: block;
-	line-height: 1.4;
+
 }
 
 .navItem.selectedItem {
-	color: red;
+	background-color: white;
 }
 
 .controlItem {
@@ -27,6 +69,7 @@
 }
 
 .world {
+	display: block;
 	visibility: hidden;
 }
 

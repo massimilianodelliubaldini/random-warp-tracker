@@ -303,20 +303,20 @@ function loadWorlds() {
 				var world = data.worlds[i];
 				var worldId = "world" + world.worldName;
 
-				var nav = "<a class='navItem' href='javascript:void(0);'><span id='nav" + world.worldName + "'>" + world.navName + "</span></a>";
+				var nav = "<li class='navItem'><a href='javascript:void(0);'><span id='nav" + world.worldName + "'>" + world.navName + "</span></a></li>";
 				switch(world.navType) {
 					case "key":
-						$("#keys").after(nav);
+						$("#keys").append(nav);
 						break;
 					case "city":
-						$("#cities").after(nav);
+						$("#cities").append(nav);
 						break;
 					default:
-						$("#others").after(nav);
+						$("#others").append(nav);
 						break;
 				}
 
-				var div = "<div id='" + worldId + "' class='vdiv world'></div>";
+				var div = "<div id='" + worldId + "' class='world'></div>";
 				$("#worlds").append(div);
 				
 				var img = "<img id='" + worldId + "Image' src='' usemap='#map" + world.worldName + "' class='map'/>";
