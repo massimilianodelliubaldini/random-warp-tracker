@@ -1,0 +1,86 @@
+{
+	"imageName": "Seafloor_Cavern_E.png",
+	"warps": 
+	[
+		{
+			"altName": "Room 1 Cave",
+			"coordString": "120,0,151,31"
+		},
+		{
+			"altName": "Room 1 Left Entrance",
+			"coordString": "56,240,87,271"
+		},
+		{
+			"altName": "Room 1 Right Entrance",
+			"coordString": "136,208,167,239"
+		},
+		{
+			"altName": "Room 2 Cave",
+			"coordString": "360,16,391,47"
+		},
+		{
+			"altName": "Room 2 Left Entrance",
+			"coordString": "344,288,375,319"
+		},
+		{
+			"altName": "Room 2 Right Entrance",
+			"coordString": "536,208,567,239"
+		},
+		{
+			"altName": "Room 3 Cave",
+			"coordString": "664,0,695,31"
+		},
+		{
+			"altName": "Room 3 Left Entrance",
+			"coordString": "712,272,743,303"
+		},
+		{
+			"altName": "Room 3 Right Entrance",
+			"coordString": "840,192,871,223"
+		},
+		{
+			"altName": "Room 4 Left Cave",
+			"coordString": "56,352,87,383"
+		},
+		{
+			"altName": "Room 4 Right Cave",
+			"coordString": "200,352,231,383"
+		},
+		{
+			"altName": "Room 4 Bottom Cave",
+			"coordString": "136,496,167,527"
+		},
+		{
+			"altName": "Room 4 Entrance",
+			"coordString": "152,592,183,623"
+		},
+		{
+			"altName": "Room 5 Left Cave",
+			"coordString": "392,352,423,383"
+		},
+		{
+			"altName": "Room 5 Right Cave",
+			"coordString": "472,352,503,383"
+		},
+		{
+			"altName": "Room 5 Left Entrance",
+			"coordString": "360,512,391,543"
+		},
+		{
+			"altName": "Room 5 Right Entrance",
+			"coordString": "456,464,487,495"
+		},
+		{
+			"altName": "Room 6 Left Cave",
+			"coordString": "664,352,695,383"
+		},
+		{
+			"altName": "Room 6 Right Cave",
+			"coordString": "824,464,855,495"
+		},
+		{
+			"altName": "Room 6 Entrance",
+			"coordString": "776,688,807,719"
+		}
+	]
+}

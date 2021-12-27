@@ -1,0 +1,30 @@
+{
+	"imageName": "Seaside_Cycling_Road_E.png",
+	"warps": 
+	[
+		{
+			"altName": "North Entrance 1",
+			"coordString": "112,160,159,207"
+		},
+		{
+			"altName": "North Entrance 2",
+			"coordString": "160,160,207,207"
+		},
+		{
+			"altName": "South Entrance 1",
+			"coordString": "128,1312,175,1359"
+		},
+		{
+			"altName": "South Entrance 2",
+			"coordString": "176,1312,223,1359"
+		},
+		{
+			"altName": "New Mauville Cave",
+			"coordString": "432,288,479,335"
+		},
+		{
+			"altName": "Trick House",
+			"coordString": "48,960,95,1007"
+		}
+	]
+}

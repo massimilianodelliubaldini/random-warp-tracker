@@ -1,0 +1,46 @@
+{
+	"imageName": "Victory_Road_E.png",
+	"warps": 
+	[
+		{
+			"altName": "B1F Ladder 1",
+			"coordString": "112,32,143,63"
+		},
+		{
+			"altName": "B1F Ladder 2",
+			"coordString": "256,240,287,271"
+		},
+		{
+			"altName": "B1F Ladder 3",
+			"coordString": "64,400,95,431"
+		},
+		{
+			"altName": "B1F Ladder 4",
+			"coordString": "304,320,335,351"
+		},
+		{
+			"altName": "B1F Ladder 5",
+			"coordString": "464,384,495,415"
+		},
+		{
+			"altName": "B1F Ladder 6",
+			"coordString": "656,384,687,415"
+		},
+		{
+			"altName": "B2F Ladder 1",
+			"coordString": "672,528,703,559"
+		},
+		{
+			"altName": "B2F Ladder 2",
+			"coordString": "288,688,319,719"
+		},
+		{
+			"altName": "B2F Ladder 3",
+			"coordString": "64,912,95,943"
+		},
+		{
+			"altName": "B2F Ladder 4",
+			"coordString": "464,896,495,927"
+		}
+	]
+}

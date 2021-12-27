@@ -103,6 +103,11 @@
 			"navType": "other"
 		},
 		{
+			"worldName": "CyclingRoad",
+			"navName": "Cycling Road",
+			"navType": "other"
+		},
+		{
 			"worldName": "GraniteCave",
 			"navName": "Granite Cave",
 			"navType": "other"
@@ -135,6 +140,16 @@
 		{
 			"worldName": "RusturfTunnel",
 			"navName": "Rusturf Tunnel",
+			"navType": "other"
+		},
+		{
+			"worldName": "SeafloorCavern",
+			"navName": "Seafloor Cavern",
+			"navType": "other"
+		},
+		{
+			"worldName": "VictoryRoad",
+			"navName": "Victory Road",
 			"navType": "other"
 		}
 	]
