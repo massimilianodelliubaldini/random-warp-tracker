@@ -68,11 +68,11 @@
 		},
 		{
 			"altName": "Room 5 Top Hole",
-			"coordString": "496,464,527,495"
+			"coordString": "504,464,535,495"
 		},
 		{
 			"altName": "Room 5 Bottom Hole",
-			"coordString": "496,496,527,527"
+			"coordString": "504,496,535,527"
 		}
 	]
 }

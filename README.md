@@ -24,13 +24,11 @@ I wrote this site to practice web development. My goals for this project:
 
 ## To-Do Items
 
-1. Map out the non-city worlds.
+1. Map out the on-route warps.
 
-2. Figure out how to display the centers and key locations. Maybe HTML tables? How do I make those play nice with the other image-based worlds?
+2. Write code comments. There are exactly zero of them. I like the idea of self-documenting code, but in some places that's not feasible. 
 
-3. Write code comments. There are exactly zero of them. I like the idea of self-documenting code, but in some places that's not feasible. 
-
-4. Move the warp dictionary to a cookie. Currently, if you navigate away from the site, you lose all progress.
+3. Move the warp dictionary to a cookie. Currently, if you navigate away from the site, you lose all progress.
 
 99. Write a game selector.
 
