@@ -303,7 +303,7 @@ function loadWorlds() {
 				var world = data.worlds[i];
 				var worldId = "world" + world.worldName;
 
-				var nav = "<li class='navItem'><a href='javascript:void(0);'><span id='nav" + world.worldName + "'>" + world.navName + "</span></a></li>";
+				var nav = "<li class='navItem'><a href='javascript:void(0);' id='nav" + world.worldName + "'>" + world.navName + "</a></li>";
 				switch(world.navType) {
 					case "key":
 						$("#keys").append(nav);
