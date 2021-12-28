@@ -4,18 +4,23 @@ var friendlyNames = {};
 
 function main() {
 
-	friendlyNames = {...keyLocations};
-
+	// Start by loading worlds.json, which tells us the number and names of worlds we have to load.
 	var loads = [];
 	loadWorlds()
 		.then( function() {
+
+			// For each world we identified, load that world by name. Store the promise of each load in an array.
 			$(".world").each( function() {
 				loads.push(loadWorld($(this)[0].id));
 			});
 		})
 		.then( function() {
+
+			// Once all of the promises have been fulfilled, we can set up our click events and context menu.
+			// We only want to do this part once, otherwise click events will stack up multiple times per click.
 			Promise.all(loads).then( function() {
 
+				// Set up the left click on navigation items to make the selected world visible.
 				$(".navItem").click( function(e) {
 					e.preventDefault(); 
 					var travelled = showWorld(e.target.id.replace("nav", "world"));
@@ -26,12 +31,15 @@ function main() {
 					return false; 
 				});
 
+				// Set up the left click on warp points to travel through them, if they are linked.
 				$(".warp").click( function(e) {
 					e.preventDefault(); 
 					travelThru(e.target.id);
 					return false; 
 				});
 
+				// Set up the hover on linked/key warp points to see where they lead without having to click on them.
+				// This is a read-only context menu that just shows you information, you cannot actually interact with it.
 				$( function () {
 					$.contextMenu({
 						selector: ".warp.twoWay, .warp.oneWay, .warp.keyLocation", 
@@ -60,6 +68,10 @@ function main() {
 					});
 				});
 
+				// Set up the main context menu with all the options.
+				// Visibility of each option is dependent on the selected warp.
+				// This takes up a lot of space, so I want to make this a separate script, 
+				// but IDK if that would affect the scope of $(this)...
 				$( function () {
 					$.contextMenu({
 						selector: ".warp",
@@ -288,6 +300,7 @@ function main() {
 					});
 				});
 
+				// Finally, enable map hilighting after all the warps have been loaded.
 				$(".map").maphilight({alwaysOn:true});
 			});
 		});
@@ -301,7 +314,7 @@ function loadWorlds() {
 			for (var i = 0; i < data.worlds.length; i++) {
 
 				var world = data.worlds[i];
-				var worldId = "world" + world.worldName;
+				var worldId = "world" + world.worldName; // A little bit of notation to differentiate world objects from navigation objects.
 
 				var nav = "<li class='navItem'><a href='javascript:void(0);' id='nav" + world.worldName + "'>" + world.navName + "</a></li>";
 				switch(world.navType) {
@@ -330,15 +343,18 @@ function loadWorlds() {
 }
 
 function loadWorld(worldId) {
+
+	// Bad practice: I really should not rely on the name of the world to find the correct JSON file.
 	var worldName = worldId.replace("world", "");
 
-	return fetch(jsonPath + worldName.toLowerCase() + ".json")
+	return fetch(jsonPath + worldName.toLowerCase() + ".json") 
 		.then(response => response.json())
 		.then(data => {
 
 			$("#" + worldId + "Image").attr("src", imagePath + data.imageName);
 			for (var i = 0; i < data.warps.length; i++) {
 
+				// Bad practice: I really really should not rely on the name of the warp to give it an ID.
 				var warp = data.warps[i];
 				var warpId = worldId + splitter + warp.altName.toLowerCase().replaceAll(" ", "");
 
@@ -353,6 +369,9 @@ function loadWorld(worldId) {
 }
 
 function showWorld(worldId) {
+
+	// I think it is much faster to load all the worlds ahead of time, 
+	// and just toggle visibility and position when you want to go to one.
 	if(worldId) {
 		$(".world").removeClass("selectedWorld");
 		$("#" + worldId).addClass("selectedWorld");
@@ -363,17 +382,22 @@ function showWorld(worldId) {
 }
 
 function showContextItems(itemKey, warpId) {
+
+	// Booleans used multiple times below.
 	var isWarpUnlinked = $("#" + warpId)[0].className.includes("unlinked");
+	var hasStartedLink = firstLink != "";
+
+	// Allow fall-through so multiple items use the same visibility logic.
 	switch(itemKey) {
 		case "startLink":
 		case "deadEnd":
 		case "keyLocation":
 			return isWarpUnlinked;
 		case "cancelLink":
-			return firstLink != "";
+			return hasStartedLink;
 		case "finishTwoWay":
 		case "finishOneWay":
-			return isWarpUnlinked && firstLink != "" && firstLink != warpId;
+			return isWarpUnlinked && hasStartedLink && firstLink != warpId;
 		case "unlink":
 			return !isWarpUnlinked;
 		default:
@@ -452,9 +476,9 @@ function markDeadEnd(warpId) {
 }
 
 function markKeyLocation(key, warpId) {
-	log("Marking " + friendlyNames[warpId] + " as " + friendlyNames[key] + ".");
-
 	var keyWarpId = "worldKeyLocations" + splitter + key;
+	log("Marking " + friendlyNames[warpId] + " as " + friendlyNames[keyWarpId] + ".");
+
 	warpDictionary[warpId] = keyWarpId;
 	warpDictionary[keyWarpId] = warpId;
 
@@ -464,6 +488,7 @@ function markKeyLocation(key, warpId) {
 	$("#" + warpId).removeClass("unlinked");
 	$("#" + keyWarpId).removeClass("unlinked");
 	
+	// Use twoWay class so that you can still travel through key locations and back if need be.
 	$("#" + warpId).addClass("twoWay");
 	$("#" + keyWarpId).addClass("twoWay");
 
@@ -495,6 +520,8 @@ function finishSingleLink(secondLink) {
 	warpDictionary[firstLink] = secondLink;
 	warpDictionary[secondLink] = deadEnd;
 
+	// Kludge: I mark the other side of a 1-way warp a deadEnd.
+	// This is how I prevent you from going back through it the wrong way.
 	$("#" + firstLink).data("maphilight", hilightOneWay);
 	$("#" + secondLink).data("maphilight", hilightDeadEnd);
 
