@@ -129,6 +129,14 @@
 		{
 			"altName": "Sootopolis Front Door",
 			"coordString": "232,1030,295,1061"
+		},
+		{
+			"altName": "Verdanturf Stairs",
+			"coordString": "360,1082,423,1122"
+		},
+		{
+			"altName": "Verdanturf Front Door",
+			"coordString": "232,1091,295,1122"
 		}
 	]
 }

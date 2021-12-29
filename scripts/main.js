@@ -23,11 +23,7 @@ function main() {
 				// Set up the left click on navigation items to make the selected world visible.
 				$(".navItem").click( function(e) {
 					e.preventDefault(); 
-					var travelled = showWorld(e.target.id.replace("nav", "world"));
-					if(travelled) {
-						$(".navItem").removeClass("selectedItem");
-						$(this).addClass("selectedItem");
-					}
+					showWorld(e.target.id.replace("nav", "world"));
 					return false; 
 				});
 
@@ -204,8 +200,8 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									elite41backdoor: {
-										name: "Elite4 1 Back Door",
+									elite1frontdoor: {
+										name: "Elite 1 Front Door",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
 										},
@@ -213,8 +209,8 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									elite42backdoor: {
-										name: "Elite4 2 Back Door",
+									elite1backdoor: {
+										name: "Elite 1 Back Door",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
 										},
@@ -222,8 +218,8 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									elite43backdoor: {
-										name: "Elite4 3 Back Door",
+									elite2frontdoor: {
+										name: "Elite 2 Front Door",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
 										},
@@ -231,8 +227,8 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									elite44backdoor: {
-										name: "Elite4 4 Back Door",
+									elite2backdoor: {
+										name: "Elite 2 Back Door",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
 										},
@@ -240,8 +236,8 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									elite41frontdoor: {
-										name: "Elite4 1 Front Door",
+									elite3frontdoor: {
+										name: "Elite 3 Front Door",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
 										},
@@ -249,8 +245,8 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									elite42frontdoor: {
-										name: "Elite4 2 Front Door",
+									elite3backdoor: {
+										name: "Elite 3 Back Door",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
 										},
@@ -258,8 +254,8 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									elite43frontdoor: {
-										name: "Elite4 3 Front Door",
+									elite4frontdoor: {
+										name: "Elite 4 Front Door",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
 										},
@@ -267,8 +263,8 @@ function main() {
 											markKeyLocation(key, $(this)[0].id); 
 										}
 									},
-									elite44frontdoor: {
-										name: "Elite4 4 Front Door",
+									elite4backdoor: {
+										name: "Elite 4 Back Door",
 										icon: function (opt, $itemElement, itemKey, item) {
 											return showContextIcons(itemKey);
 										},
@@ -376,9 +372,10 @@ function showWorld(worldId) {
 		$(".world").removeClass("selectedWorld");
 		$("#" + worldId).addClass("selectedWorld");
 		$("#worlds").prepend($("#" + worldId));
-		return true;
+
+		$(".navItem").removeClass("selectedItem");
+		$(this).addClass("selectedItem");
 	}
-	return false;
 }
 
 function showContextItems(itemKey, warpId) {
@@ -405,7 +402,7 @@ function showContextItems(itemKey, warpId) {
 	}
 }
 function showContextIcons(itemKey) {
-	return Object.values(warpDictionary).includes(itemKey) ? "context-menu-icon-checked" : "";
+	return Object.values(warpDictionary).includes("worldKeyLocations" + splitter + itemKey) ? "context-menu-icon-checked" : "";
 }
 
 function travelThru(warpId) {

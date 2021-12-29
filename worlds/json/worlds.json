@@ -88,6 +88,11 @@
 			"navType": "city"
 		},
 		{
+			"worldName": "Verdanturf",
+			"navName": "Verdanturf Town",
+			"navType": "city"
+		},
+		{
 			"worldName": "AbandonedShip",
 			"navName": "Abandoned Ship",
 			"navType": "other"

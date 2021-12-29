@@ -73,6 +73,34 @@
 		{
 			"altName": "Room 5 Bottom Hole",
 			"coordString": "504,496,535,527"
+		},
+		{
+			"altName": "Room 5 Landing Point",
+			"coordString": "328,472,359,503"
+		},
+		{
+			"altName": "Room 4 Top Landing Point",
+			"coordString": "280,464,311,495"
+		},
+		{
+			"altName": "Room 4 Bottom Landing Point",
+			"coordString": "280,496,311,527"
+		},
+		{
+			"altName": "Room 3 Left Landing Point",
+			"coordString": "568,184,599,215"
+		},
+		{
+			"altName": "Room 3 Right Landing Point",
+			"coordString": "680,152,711,183"
+		},
+		{
+			"altName": "Room 2 Left Landing Point",
+			"coordString": "408,184,439,215"
+		},
+		{
+			"altName": "Room 2 Right Landing Point",
+			"coordString": "472,184,503,215"
 		}
 	]
 }

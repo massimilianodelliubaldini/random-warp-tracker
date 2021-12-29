@@ -1,0 +1,34 @@
+{
+	"imageName": "Verdanturf_Town_E.png",
+	"warps": 
+	[
+		{
+			"altName": "PokeCenter",
+			"coordString": "240,0,303,63"
+		},
+		{
+			"altName": "PokeMart",
+			"coordString": "176,8,239,63"
+		},
+		{
+			"altName": "Contest Hall",
+			"coordString": "16,48,95,127"
+		},
+		{
+			"altName": "Rusturf Tunnel",
+			"coordString": "120,0,151,31"
+		},
+		{
+			"altName": "House 1",
+			"coordString": "0,176,63,239"
+		},
+		{
+			"altName": "House 2",
+			"coordString": "128,176,207,239"
+		},
+		{
+			"altName": "House 3",
+			"coordString": "256,192,319,255"
+		}
+	]
+}

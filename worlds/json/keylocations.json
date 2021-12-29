@@ -35,36 +35,36 @@
 			"coordString": "560,0,639,63"
 		},
 		{
-			"altName":"Elite4 1 Back Door",
-			"coordString": "80,64,127,111"
-		},
-		{
-			"altName":"Elite4 2 Back Door",
-			"coordString": "288,64,335,111"
-		},
-		{
-			"altName":"Elite4 3 Back Door",
-			"coordString": "496,64,543,111"
-		},
-		{
-			"altName":"Elite4 4 Back Door",
-			"coordString": "704,64,751,111"
-		},
-		{
-			"altName":"Elite4 1 Front Door",
+			"altName":"Elite 1 Front Door",
 			"coordString": "80,240,127,287"
 		},
 		{
-			"altName":"Elite4 2 Front Door",
+			"altName":"Elite 1 Back Door",
+			"coordString": "80,64,127,111"
+		},
+		{
+			"altName":"Elite 2 Front Door",
 			"coordString": "288,240,335,287"
 		},
 		{
-			"altName":"Elite4 3 Front Door",
+			"altName":"Elite 2 Back Door",
+			"coordString": "288,64,335,111"
+		},
+		{
+			"altName":"Elite 3 Front Door",
 			"coordString": "496,240,543,287"
 		},
 		{
-			"altName":"Elite4 4 Front Door",
+			"altName":"Elite 3 Back Door",
+			"coordString": "496,64,543,111"
+		},
+		{
+			"altName":"Elite 4 Front Door",
 			"coordString": "704,240,751,287"
+		},
+		{
+			"altName":"Elite 4 Back Door",
+			"coordString": "704,64,751,111"
 		},
 		{
 			"altName":"Champion",

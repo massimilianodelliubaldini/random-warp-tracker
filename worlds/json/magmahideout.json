@@ -1,18 +1,42 @@
 {
-	"imageName": "Magma_Hideout_1F_E.png",
+	"imageName": "Magma_Hideout_E.png",
 	"warps": 
 	[
 		{
-			"altName": "Cave",
+			"altName": "Room 1 Cave",
 			"coordString": "304,320,351,367"
 		},
 		{
-			"altName": "Left Entrance",
+			"altName": "Room 1 Left Entrance",
 			"coordString": "146,544,193,591"
 		},
 		{
-			"altName": "Right Entrance",
+			"altName": "Room 1 Right Entrance",
 			"coordString": "386,544,433,591"
+		},
+		{
+			"altName": "Room 2 Top Cave",
+			"coordString": "688,0,735,47"
+		},
+		{
+			"altName": "Room 2 Bottom Cave",
+			"coordString": "736,320,782,367"
+		},
+		{
+			"altName": "Room 2 Entrance",
+			"coordString": "834,504,881,551"
+		},
+		{
+			"altName": "Room 3 Top Cave",
+			"coordString": "352,632,399,679"
+		},
+		{
+			"altName": "Room 3 Bottom Cave",
+			"coordString": "320,728,367,775"
+		},
+		{
+			"altName": "Room 3 Entrance",
+			"coordString": "96,936,143,983"
 		}
 	]
 }
