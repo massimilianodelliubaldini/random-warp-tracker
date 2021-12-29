@@ -29,6 +29,14 @@
 		{
 			"altName": "House 2",
 			"coordString": "496,176,575,239"
+		},
+		{
+			"altName": "Daycare",
+			"coordString": "12,382,97,409"
+		},
+		{
+			"altName": "Winstrate House",
+			"coordString": "12,432,187,459"
 		}
 	]
 }

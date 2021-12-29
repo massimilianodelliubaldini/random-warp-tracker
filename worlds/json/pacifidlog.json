@@ -25,6 +25,10 @@
 		{
 			"altName": "House 5",
 			"coordString": "256,288,303,351"
+		},
+		{
+			"altName": "Sky Pillar Cave",
+			"coordString": "332,62,505,89"
 		}
 	]
 }

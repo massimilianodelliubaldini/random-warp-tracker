@@ -37,6 +37,14 @@
 		{
 			"altName": "South House",
 			"coordString": "320,656,383,719"
+		},
+		{
+			"altName": "Beach House",
+			"coordString": "652,62,783,89"
+		},
+		{
+			"altName": "Abandoned Ship",
+			"coordString": "652,112,819,139"
 		}
 	]
 }

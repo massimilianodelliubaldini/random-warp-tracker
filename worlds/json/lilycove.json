@@ -45,6 +45,18 @@
 		{
 			"altName": "Motel",
 			"coordString": "576,320,671,399"
+		},
+		{
+			"altName": "Aqua Hideout",
+			"coordString": "1104,48,1151,95"
+		},
+		{
+			"altName": "Shard House",
+			"coordString": "12,706,139,725"
+		},
+		{
+			"altName": "Mt Pyre",
+			"coordString": "12,756,91,775"
 		}
 	]
 }

@@ -25,6 +25,26 @@
 		{
 			"altName": "Hot Spring",
 			"coordString": "36,32,123,111"
+		},
+		{
+			"altName": "Jagged Pass",
+			"coordString": "12,382,143,409"
+		},
+		{
+			"altName": "Fiery Path S",
+			"coordString": "12,432,149,459"
+		},
+		{
+			"altName": "Cable Car Station",
+			"coordString": "12,482,209,509"
+		},
+		{
+			"altName": "Mirage Tower",
+			"coordString": "12,532,155,559"
+		},
+		{
+			"altName": "Desert Ruins",
+			"coordString": "12,582,155,609"
 		}
 	]
 }

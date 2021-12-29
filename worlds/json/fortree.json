@@ -37,6 +37,26 @@
 		{
 			"altName": "House 6",
 			"coordString": "576,176,623,223"
+		},
+		{
+			"altName": "Weather Institute",
+			"coordString": "12,382,215,409"
+		},
+		{
+			"altName": "Mimic House",
+			"coordString": "12,432,143,459"
+		},
+		{
+			"altName": "Berry House",
+			"coordString": "12,482,143,509"
+		},
+		{
+			"altName": "Scorched Slab",
+			"coordString": "12,532,167,559"
+		},
+		{
+			"altName": "Ancient Tomb",
+			"coordString": "12,582,155,609"
 		}
 	]
 }

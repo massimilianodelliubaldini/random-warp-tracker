@@ -25,6 +25,22 @@
 		{
 			"altName": "Garden House",
 			"coordString": "304,336,367,399"
+		},
+		{
+			"altName": "Briny House",
+			"coordString": "12,541,143,568"
+		},
+		{
+			"altName": "Petalburg Woods SW",
+			"coordString": "12,591,221,618"
+		},
+		{
+			"altName": "Petalburg Woods SE",
+			"coordString": "12,641,221,668"
+		},
+		{
+			"altName": "Island Cave",
+			"coordString": "12,691,143,718"
 		}
 	]
 }

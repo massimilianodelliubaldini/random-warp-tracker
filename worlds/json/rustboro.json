@@ -45,6 +45,26 @@
 		{
 			"altName": "Mart House",
 			"coordString": "384,672,479,751"
+		},
+		{
+			"altName": "Flower Shop",
+			"coordString": "652,62,783,89"
+		},
+		{
+			"altName": "Petalburg Woods N",
+			"coordString": "652,112,849,139"
+		},
+		{
+			"altName": "Tunneler House",
+			"coordString": "652,162,819,189"
+		},
+		{
+			"altName": "Rusturf Tunnel",
+			"coordString": "652,212,819,239"
+		},
+		{
+			"altName": "Meteor Falls S",
+			"coordString": "652,262,813,289"
 		}
 	]
 }
