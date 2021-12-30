@@ -138,6 +138,11 @@
 			"navType": "other"
 		},
 		{
+			"worldName": "NavelRock",
+			"navName": "Navel Rock",
+			"navType": "other"
+		},
+		{
 			"worldName": "PetalburgWoods",
 			"navName": "Petalburg Woods",
 			"navType": "other"

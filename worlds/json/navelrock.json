@@ -1,0 +1,18 @@
+{
+	"imageName": "Navel_Rock_Shortened_E.png",
+	"warps": 
+	[
+		{
+			"altName": "Left Ladder",
+			"coordString": "48,80,95,127"
+		},
+		{
+			"altName": "Right Ladder",
+			"coordString": "336,80,383,127"
+		},
+		{
+			"altName": "Bottom Ladder",
+			"coordString": "160,304,207,351"
+		}
+	]
+}
