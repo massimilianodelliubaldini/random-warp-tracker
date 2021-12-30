@@ -37,3 +37,16 @@ var hilightKeyLocation = {
 	'fillColor': 'ffff00',
 	'fillOpacity': 0.4
 };
+
+var locks = {
+	'hm01': 'Cut',
+	'hm02': 'Fly',
+	'hm03': 'Surf',
+	'hm04': 'Strength',
+	'hm05': 'Flash',
+	'hm06': 'Rock Smash',
+	'hm07': 'Waterfall',
+	'mach': 'Mach Bike',
+	'acro': 'Acro Bike',
+	'story': 'Story Progression'
+};

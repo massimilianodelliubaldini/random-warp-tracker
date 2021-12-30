@@ -1,8 +1,11 @@
 var firstLink = "";
 var warpDictionary = {};
+var lockDictionary = {};
 var friendlyNames = {};
 
 function main() {
+
+	friendlyNames = {...locks};
 
 	// Start by loading worlds.json, which tells us the number and names of worlds we have to load.
 	var loads = [];
@@ -43,6 +46,7 @@ function main() {
 						delay: 500,
 						build: function($triggerElement, e) {
 							var hoverDest = friendlyNames[warpDictionary[$triggerElement[0].id]];
+							var hoverLock = friendlyNames[lockDictionary[$triggerElement[0].id]];
         					return {
 								animation: {
 									duration: 0, 
@@ -54,9 +58,14 @@ function main() {
 								},
 								autoHide: true,
 								items: {
-									hoverLink: {
+									hoverItemA: {
 										name: hoverDest,
 										disabled: true
+									},
+									hoverItemB: {
+										name: "Requires " + hoverLock,
+										disabled: true,
+										visible: hoverLock ? true : false
 									}
 								}
 							};
@@ -120,6 +129,74 @@ function main() {
 								},
 								callback: function(key, opt) { 
 									markDeadEnd($(this)[0].id); 
+								}
+							},
+							locks: {
+								name: "Locks",
+								visible: function(key, opt) {
+									return showContextItems(key, $(this)[0].id);
+								},
+								items: {
+									hm01: {
+										name: "Cut",
+										callback: function(key, opt) {
+											markLockedLocation(key, $(this)[0].id);
+										}
+									},
+									hm02: {
+										name: "Fly",
+										callback: function(key, opt) {
+											markLockedLocation(key, $(this)[0].id);
+										}
+									},
+									hm03: {
+										name: "Surf",
+										callback: function(key, opt) {
+											markLockedLocation(key, $(this)[0].id);
+										}
+									},
+									hm04: {
+										name: "Strength",
+										callback: function(key, opt) {
+											markLockedLocation(key, $(this)[0].id);
+										}
+									},
+									hm05: {
+										name: "Flash",
+										callback: function(key, opt) {
+											markLockedLocation(key, $(this)[0].id);
+										}
+									},
+									hm06: {
+										name: "Rock Smash",
+										callback: function(key, opt) {
+											markLockedLocation(key, $(this)[0].id);
+										}
+									},
+									hm07: {
+										name: "Waterfall",
+										callback: function(key, opt) {
+											markLockedLocation(key, $(this)[0].id);
+										}
+									},
+									mach: {
+										name: "Mach Bike",
+										callback: function(key, opt) {
+											markLockedLocation(key, $(this)[0].id);
+										}
+									},
+									acro: {
+										name: "Acro Bike",
+										callback: function(key, opt) {
+											markLockedLocation(key, $(this)[0].id);
+										}
+									},
+									story: {
+										name: "Story Progression",
+										callback: function(key, opt) {
+											markLockedLocation(key, $(this)[0].id);
+										}
+									},
 								}
 							},
 							keyLocation: {
@@ -396,6 +473,7 @@ function showContextItems(itemKey, warpId) {
 		case "finishOneWay":
 			return isWarpUnlinked && hasStartedLink && firstLink != warpId;
 		case "unlink":
+		case "locks":
 			return !isWarpUnlinked;
 		default:
 			return false;
@@ -470,6 +548,12 @@ function markDeadEnd(warpId) {
 	$("#" + warpId).addClass("deadEnd");
 
 	$(".map").maphilight({alwaysOn:true});
+}
+
+function markLockedLocation(lock, warpId) {
+	log("Locking " + friendlyNames[warpId] + " behind " + friendlyNames[lock] + ".");
+
+	lockDictionary[warpId] = lock;
 }
 
 function markKeyLocation(key, warpId) {
