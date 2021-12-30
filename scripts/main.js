@@ -23,7 +23,7 @@ function main() {
 				// Set up the left click on navigation items to make the selected world visible.
 				$(".navItem").click( function(e) {
 					e.preventDefault(); 
-					showWorld(e.target.id.replace("nav", "world"));
+					showWorld(e.target.id.replace("nav", ""));
 					return false; 
 				});
 
@@ -364,17 +364,17 @@ function loadWorld(worldId) {
 		.catch(error => console.log(error));
 }
 
-function showWorld(worldId) {
+function showWorld(navWorldId) {
 
 	// I think it is much faster to load all the worlds ahead of time, 
 	// and just toggle visibility and position when you want to go to one.
-	if(worldId) {
+	if(navWorldId) {
 		$(".world").removeClass("selectedWorld");
-		$("#" + worldId).addClass("selectedWorld");
-		$("#worlds").prepend($("#" + worldId));
+		$("#world" + navWorldId).addClass("selectedWorld");
+		$("#worlds").prepend($("#world" + navWorldId));
 
 		$(".navItem").removeClass("selectedItem");
-		$(this).addClass("selectedItem");
+		$("#nav" + navWorldId).parent().addClass("selectedItem");
 	}
 }
 
@@ -415,7 +415,7 @@ function travelThru(warpId) {
 		{
 			log("Traveling through " + friendlyNames[warpId] + " to " + friendlyNames[dest] + ".");
 			var destWorldId = dest.split(splitter)[0];
-			showWorld(destWorldId);
+			showWorld(destWorldId.replace("world", ""));
 		}
 	}
 	else {
