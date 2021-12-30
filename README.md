@@ -24,13 +24,9 @@ I wrote this site to practice web development. My goals for this project:
 
 ## To-Do Items
 
-1. Map out the on-route warps.
+1. Write a game selector.
 
-2. Write code comments. There are exactly zero of them. I like the idea of self-documenting code, but in some places that's not feasible. 
-
-3. Move the warp dictionary to a cookie. Currently, if you navigate away from the site, you lose all progress.
-
-99. Write a game selector.
+2. Refactor to remove bad practices.
 
 ## Dependencies
 
