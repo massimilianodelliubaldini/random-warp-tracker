@@ -101,6 +101,10 @@
 		{
 			"altName": "Room 2 Right Landing Point",
 			"coordString": "472,184,503,215"
+		},
+		{
+			"altName": "Room 1 Landing Point",
+			"coordString": "248,136,279,167"
 		}
 	]
 }
