@@ -2,7 +2,6 @@ var firstLink = "";
 var warpDictionary = {};
 var lockDictionary = {};
 var friendlyNames = {};
-var cacheDictionary = {};
 
 function main() {
 
