@@ -375,6 +375,9 @@ function main() {
 
 				// Finally, enable map hilighting after all the warps have been loaded.
 				$(".map").maphilight({alwaysOn:true});
+
+				// Load any saved warps here, after everything else has been loaded.
+				loadCachedWarps();
 			});
 		});
 }
@@ -536,6 +539,8 @@ function unlink(warpId) {
 	}
 
 	$(".map").maphilight({alwaysOn:true});
+
+	deleteWarpsInCache(source);
 }
 
 function markDeadEnd(warpId) {
@@ -548,12 +553,15 @@ function markDeadEnd(warpId) {
 	$("#" + warpId).addClass("deadEnd");
 
 	$(".map").maphilight({alwaysOn:true});
+
+	cacheWarp(warpId, "deadEnd", true, false);
 }
 
 function markLockedLocation(lock, warpId) {
 	log("Locking " + friendlyNames[warpId] + " behind " + friendlyNames[lock] + ".");
 
 	lockDictionary[warpId] = lock;
+
 }
 
 function markKeyLocation(key, warpId) {
@@ -574,6 +582,8 @@ function markKeyLocation(key, warpId) {
 	$("#" + keyWarpId).addClass("twoWay");
 
 	$(".map").maphilight({alwaysOn:true});
+
+	cacheWarp(warpId, key, false, true);
 }
 
 function finishDoubleLink(secondLink) {
@@ -590,6 +600,8 @@ function finishDoubleLink(secondLink) {
 
 	$("#" + firstLink).addClass("twoWay");
 	$("#" + secondLink).addClass("twoWay");
+
+	cacheWarp(firstLink, secondLink, false, false);
 
 	firstLink = "";
 	$(".map").maphilight({alwaysOn:true});
@@ -612,6 +624,8 @@ function finishSingleLink(secondLink) {
 	$("#" + firstLink).addClass("oneWay");
 	$("#" + secondLink).addClass("deadEnd");
 
+	cacheWarp(firstLink, secondLink, true, false);
+
 	firstLink = "";
 	$(".map").maphilight({alwaysOn:true});
 }
@@ -623,5 +637,54 @@ function log(s) {
 	}
 	else {
 		console.log(s);
+	}
+}
+
+// Load warps saved in session cache.
+function loadCachedWarps() {
+	if (sessionStorage.length > 0) {
+		// Iterate through each key in the cache
+		Object.keys(sessionStorage).forEach((src) => {
+			item = JSON.parse(sessionStorage.getItem(src));
+			dest = item.dest;
+			isOneWay = item.isOneWay;
+			isKeyLocation = item.isKeyLocation;
+
+			if (dest == "deadEnd"){
+				markDeadEnd(src);
+			}
+			else if (isOneWay){
+				firstLink = src;
+				finishSingleLink(dest);
+			}
+			else if (isKeyLocation) {
+				markKeyLocation(dest, src);
+			}
+			else {
+				firstLink = src;
+				finishDoubleLink(dest);
+			}
+		})
+	}
+}
+
+// Save a warp to the sessionStorage.
+function cacheWarp(src, dest, isOneWay, isKeyLocation) {
+	// If a key location warp is being marked, we have to verify it's id using some ugly logic. 
+	if (isKeyLocation) {var key_dest = "worldKeyLocations_" + dest;}
+
+	// Determine whether the warp has already been cached. If not, save it!
+	if (sessionStorage.getItem(src) != dest || sessionStorage.getItem(src) != key_dest) {
+		// The 'value' of each session variable's key-value pair will contain an object of data that
+		// will be needed when we load from the cache.
+		item = {dest: dest, isOneWay: isOneWay, isKeyLocation: isKeyLocation};
+		sessionStorage.setItem(src, JSON.stringify(item));
+	}
+}
+
+// Remove (unlink) a warp in the sessionStorage.
+function deleteWarpsInCache(source) {
+	if(sessionStorage.getItem(source)) {
+		sessionStorage.removeItem(source);
 	}
 }
